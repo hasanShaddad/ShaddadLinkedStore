@@ -1,0 +1,185 @@
+﻿ 
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.Products>
+
+
+@{
+
+    ViewBag.Title = "title";
+
+}
+
+<!--add product to cart script-->
+@helper AddProductToCart()
+{
+
+//todo  :refactror scripts
+    <script>
+        //using cart script to add product
+        //get product id and product detailes
+        function addMe(productId) {
+
+
+            var prodId = document.getElementById(productId + 'ProductId').value;
+
+            var imgUrl = document.getElementById(prodId + 'imgUrl').src;
+
+            var orPrice = document.getElementById(prodId + 'orPrice').value;
+
+            var productName = document.getElementById(prodId + 'ProductName').value;
+            var drqty = null;
+            //get descont role quantity
+            if (document.getElementById(prodId + 'drqty').value > 0) {
+                drqty = document.getElementById(prodId + 'drqty').value;
+            } else {
+                drqty = 0;
+            }
+
+            var finalprice = document.getElementById(prodId + 'finalprice').value;
+
+            
+
+            /////////////////////////////////////////////////////////////////
+            AddToCart(prodId, imgUrl, orPrice, productName, drqty, finalprice);
+            window.location.href = "https://localhost:44360/ShopCart/Index";
+
+
+        };
+    </script>
+}
+
+ 
+    <div id="posts-wrapper" class="container">
+  
+        @{Html.RenderAction("SearchProducts", "Home");}
+       
+    </div>
+ 
+
+
+
+
+
+<link href="@Url.Content("~/Content/rating.css")" rel="stylesheet" />
+
+
+
+<!--Cart script-->
+@AddProductToCart()
+
+
+   <!--rating script-->
+@section scripts {
+
+
+    <script>
+        $(function () {
+            //tabs: http://twitter.github.com/bootstrap/javascript.html#tabs
+            $('#myTab a')
+                .click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+
+            // ratting system: https://github.com/irfan/jquery-star-rating
+            $('.ratting-item').rating(function (vote, event) {
+                var anchor = $(event.currentTarget),
+                    pid = anchor.closest(".ratting-item").data("pid"),
+                    url = '@Url.Action("RateProduct", "Services")';
+
+                // show message while doing the database round trip
+                $('.ratting-item[data-pid=' + pid + ']')
+                    .next()
+                    .text("Placing your vote...");
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    data: { rate: vote, id: pid },
+                    success: function (data) {
+
+                        if (data.success) {
+                            // all went well, here you can say Thank you
+                            $('.ratting-item[data-pid=' + data.pid + ']')
+                                .next()
+                                .text("Voted ! (product id: " + data.pid + ")");
+                        } else {
+                            // There must be an Exception error, let's show it
+                            $('.ratting-item[data-pid=' + data.pid + ']')
+                                .next()
+                                .text("Something went wrong...");
+                        }
+                    },
+                    error: function (err) {
+                        // the call thrown an error
+                        $('.result').text(err);
+                    },
+                    complete: function () {
+                        //$(".loading").hide();
+                    }
+                });
+            });
+            //.addClass("fullStar")
+
+
+        });
+
+
+
+
+        $(document).ready(function () {
+
+            $('.ratting-item').each(function () {
+
+                var $input = $(this);
+                var pid = $input.attr("data-pid");
+
+                var rate = $('#' + pid).val();
+
+                if (rate == null) {
+                    rate = 0;
+                }
+
+                $input.find('.star').each(function () {
+
+                    var $star = $(this);
+                    var val1 = $star.attr("title");
+
+
+                    if (val1 <= rate) {
+                        $star.addClass("fullStar");
+
+                    }
+                });
+
+            });
+
+
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

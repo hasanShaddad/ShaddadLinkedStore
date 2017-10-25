@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ApplicationInsights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TelemetryModules">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Add">
+                <xs:complexType mixed="true">
+                  <xs:attribute name="Type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TelemetryChannel">
+          <xs:complexType>
+            <xs:attribute name="Type" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TelemetryInitializers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Add">
+                <xs:complexType>
+                  <xs:attribute name="Type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,326 @@
+﻿ 
+@model Elmatgar.Core.ViewModels.ProductsViewModel
+@helper AddToCart()
+{
+    <script>
+        //using cart script to add product
+        //get product id and product detailes
+        function addMe(prodId)
+        {
+
+            var imgUrl = document.getElementById(prodId + 'imgUrl').src;
+            var orPrice = document.getElementById('orPrice').value;
+            var productName = document.getElementById('ProductName').value;
+
+            var drqty = document.getElementById('drqty').value;
+            var finalprice = document.getElementById('finalprice').value;
+            var inventoryStock = document.getElementById('stock').value;
+            AddToCart(prodId, imgUrl, orPrice, productName, drqty, finalprice, inventoryStock);
+
+        };
+    </script>
+    }
+ 
+@{
+    ViewBag.Title = "title";
+
+}
+ 
+            <div class="col-sm-9 padding-right">
+    <div class="product-details">
+        <!--product-details-->
+        <div class="col-sm-5">
+            <div class="view-product">
+                @{
+                    int nm = 0;
+                }
+                @foreach (var item in Model.Images)
+                {
+                    nm++;
+
+
+
+                    <img src="~/@Html.DisplayFor(modelItem => item.ImageLink)/@Html.DisplayFor(modelItem => item.ImageName)" id="@Html.DisplayFor(modelItem => item.ProductId)imgUrl" />
+               
+
+                }
+                <h3>ZOOM</h3>
+            </div>
+            <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for relatet products  using kits -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
+                        <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
+                        <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
+                        <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
+                        <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
+                        <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
+                        <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+                    </div>
+
+                </div>
+     
+
+                <!-- Controls -->
+                <a class="left item-control" href="#similar-product" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right item-control" href="#similar-product" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+
+        </div>
+   
+        <div class="col-sm-7">
+            <div class="product-information">
+                <!--/product-information-->
+            
+ 
+          
+            @foreach (var item in Model.Products.ToList())
+
+            {
+
+                decimal? originalPrice = decimal.Parse(Html.DisplayFor(modelItem => item.ProductOriginalPrices.FirstOrDefault().OriginalPrice).ToString());
+
+                var productPromotion = item.ProductPromotions.FirstOrDefault();
+                var discountRule = item.DiscountRules.FirstOrDefault();
+
+
+
+                //end of compute final price
+
+
+
+                var prodId = @Html.AttributeEncode(item.Id).ToString();
+                <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+                <h2>@Html.DisplayFor(modelItem => item.Name)</h2>  
+               
+                <p>@Html.DisplayFor(modelItem => item.ShortDescription)</p>
+
+
+                
+               
+
+                var firstOrDefault = item.DiscountRules.FirstOrDefault();
+
+                if (firstOrDefault != null && (firstOrDefault.EndDate >= DateTime.Now))
+                {
+                    <p>by</p><label> @Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DrQty)</label> <p>peaces with</p><label id="descount"> @Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DiscountPercentage) </label>
+                }
+                <br />
+
+                <span>
+                      @FinalPriceHelper.FinalPrice(originalPrice, productPromotion, discountRule)
+                    <label>BRAND: nike</label>
+                     
+
+                    @if (!string.IsNullOrEmpty(Model.InventoryStock.ToString()))
+                    {
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+
+                                <button type="submit" id="addtocart" onclick="addMe(@prodId);" class="btn btn-fefault cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Add to cart
+                                </button>
+
+                            </div>
+                        </div>
+                    }
+                    else
+                    {<span style="color: red"> Not available </span>}
+
+                   
+                </span>
+
+
+                 
+              
+                //for scrpt only
+                <input type="hidden" id="drqty" value="@Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DrQty)" />
+            }
+            
+            
+            @foreach (var item in Model.ProductsDetails)
+            {
+                <p><b> @Html.DisplayFor(modelItem => item.AttributeHeaders.AttributeName, new { @class = "control-label" }) </b>: 
+                @Html.DisplayFor(modelItem => item.PaAttValue, new { @class = "control-label" })</p>
+
+            }
+            
+            
+            
+            
+                <input type="hidden" id="stock" value="@Html.DisplayFor(modelItem => Model.InventoryStock)" />
+
+               @if (!string.IsNullOrEmpty(Model.InventoryStock.ToString()))
+               {
+                   <p><b>Availability:</b> @Html.DisplayFor(modelItem => Model.InventoryStock) In Stock
+                   </p>
+               }
+               else
+               {<span style="color:red"> Not available </span>}
+
+                <p><b>Condition:</b> New</p>
+              
+                <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+            </div><!--/product-information-->
+        </div>
+    </div><!--/product-details-->
+
+
+</div>
+
+ 
+
+<label id="cartid"></label>
+<label id="cartqty"></label>
+
+@foreach (var item in Model.ProductsDetails.Take(1))
+{
+    <h1><input type="hidden" value="@Html.AttributeEncode(item.ProductId)" id="ProductId" name="SelectedLogin" /> </h1>
+    <h1><input type="hidden" value="@Html.AttributeEncode(item.Products.Name)" id="ProductName" /></h1>
+    var discountRule = item.Products.DiscountRules.FirstOrDefault();
+    var productId = @Html.AttributeEncode(item.ProductId.ToString());
+    var productPromotion = item.Products.ProductPromotions.FirstOrDefault();
+    decimal? originalPrice = decimal.Parse(Html.DisplayFor(modelItem => item.Products.ProductOriginalPrices.FirstOrDefault().OriginalPrice).ToString());
+
+    decimal? finalprice = decimal.Parse(@FinalPriceHelper.FinalPriceVal(originalPrice, productPromotion, discountRule, Int32.Parse(productId)).ToString());
+    <input type="hidden" id="finalprice" value="@FinalPriceHelper.DescountRolePrice( finalprice ,discountRule).ToString()" />
+    //for scrpt only
+    <input type="hidden" id="orPrice" value="@finalprice" />
+
+}
+
+@*//for scrpt only*@
+@*<input type="hidden" id="finalprice" value="@Html.DisplayFor(modelItem => Model.FinalPrice)" />*@
+
+ @AddToCart()
+
+
+ @section scripts {
+    <script src="@Url.Content("~/Scripts/rating.js")"></script>
+
+    <script>
+        $(function () {
+            //tabs: http://twitter.github.com/bootstrap/javascript.html#tabs
+            $('#myTab a')
+                .click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+
+            // ratting system: https://github.com/irfan/jquery-star-rating
+            $('.ratting-item').rating(function (vote, event) {
+                var anchor = $(event.currentTarget),
+                    pid = anchor.closest(".ratting-item").data("pid"),
+                    url = '@Url.Action("RateProduct", "Services")';
+
+                // show message while doing the database round trip
+                $('.ratting-item[data-pid=' + pid + ']')
+                    .next()
+                    .text("Placing your vote...");
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    data: { rate: vote, id: pid },
+                    success: function (data) {
+
+                        if (data.success) {
+                            // all went well, here you can say Thank you
+                            $('.ratting-item[data-pid=' + data.pid + ']')
+                                .next()
+                                .text("Voted ! (product id: " + data.pid + ")");
+                        } else {
+                            // There must be an Exception error, let's show it
+                            $('.ratting-item[data-pid=' + data.pid + ']')
+                                .next()
+                                .text("Something went wrong...");
+                        }
+                    },
+                    error: function (err) {
+                        // the call thrown an error
+                        $('.result').text(err);
+                    },
+                    complete: function () {
+                        //$(".loading").hide();
+                    }
+                });
+            });
+            //.addClass("fullStar")
+
+
+        });
+
+
+
+
+        $(document).ready(function () {
+
+            $('.ratting-item').each(function () {
+
+                var $input = $(this);
+                var pid = $input.attr("data-pid");
+
+                var rate = $('#' + pid).val();
+
+                if (rate == null) {
+                    rate = 0;
+                }
+
+                $input.find('.star').each(function () {
+
+                    var $star = $(this);
+                    var val1 = $star.attr("title");
+
+
+                    if (val1 <= rate) {
+                        $star.addClass("fullStar");
+
+                    }
+                });
+
+            });
+
+
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 

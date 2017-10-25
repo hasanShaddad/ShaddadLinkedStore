@@ -1,0 +1,109 @@
+﻿
+@using Elmatgar.Core.Models
+@model IEnumerable<Elmatgar.Core.Models.Categories>
+ <div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+
+            if (item.Parent == null)
+            {
+                <div class="col-lg-1 text-center ">
+                    @if (item.Children.Count > 0)
+                    {
+
+                        using (Ajax.BeginForm("CategForHomeMob", "home", new { categId = item.Id }, new AjaxOptions()
+                        {
+
+                            HttpMethod = "GET",
+                            AllowCache = false,
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "posts-wrapper"
+                        }))
+                        {
+
+                            <button type="submit" class="flat-butt">
+
+                                <i class="fa fa-desktop fa-1x icon-a">@Html.DisplayFor(modelitem => item.CategoryName) </i>
+
+                            </button>
+                        }
+
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Products", new {id = item.Id})">
+                            <button class="flat-butt">
+
+                                <i class="fa fa-desktop fa-1x icon-a">@Html.DisplayFor(modelitem => item.CategoryName)</i>
+                            </button>
+                        </a>
+
+
+                    }
+                </div>
+            }
+            else//categ has parent
+            {
+
+                <div class="col-lg-2 text-center ">
+
+
+                    @if (item.Children.Count > 0) //2
+                    {
+
+
+                        using (Ajax.BeginForm("CategForHomeMob", "home", new { categId = item.Id }, new AjaxOptions()
+                        {
+
+                            HttpMethod = "GET",
+                            AllowCache = false,
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "posts-wrapper"
+                        }))
+                        {
+
+                            <button type="submit" class="flat-subcateg">
+                                <i class="fa fa-gamepad fa-2x icon-a" aria-hidden="true">@Html.DisplayFor(modelitem => item.CategoryName)</i>
+                                <p>
+
+                                    <br />@Html.DisplayFor(modelitem => item.CategoryTitle)
+                                    <br />@Html.DisplayFor(modelitem => item.CategoryDescription)
+
+                                </p>
+
+
+                            </button>
+                        }
+
+
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Products", new {id = item.Id})">
+                            <button class="flat-subcateg">
+                                <i class="fa fa-gamepad fa-2x icon-a " aria-hidden="true">@Html.DisplayFor(modelitem => item.CategoryName)</i>
+
+                                <p>
+                                    <span>
+                                        <br />@Html.DisplayFor(modelitem => item.CategoryTitle)
+                                        <br />@Html.DisplayFor(modelitem => item.CategoryDescription)
+                                    </span>
+                                </p>
+                            </button>
+
+                        </a>
+
+
+                    }
+                </div>
+
+            }
+
+
+        }
+    </div>
+</div>
+<br />
+<div id="posts-wrapper"></div>

@@ -1,0 +1,7 @@
+﻿@model List< Elmatgar.Core.Models.OrderDetails >
+
+@foreach (var item in Model)
+{
+    @Html.DisplayFor(modelItem => item.OrderQuantity)
+}
+

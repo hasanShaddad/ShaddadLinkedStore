@@ -1,0 +1,306 @@
+﻿
+@using System.Activities.Statements
+@using System.Diagnostics
+@using PagedList.Mvc
+ 
+@model PagedList.IPagedList<Elmatgar.Core.Models.Products>
+
+
+
+
+<script src="~/Scripts/rating.js"></script>
+
+
+@using (Ajax.BeginForm("SearchProducts", "home", new AjaxOptions()
+{
+
+    HttpMethod = "POST",
+    AllowCache = false,
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "posts-wrapper",
+    OnComplete = "Complete(xhr, status, 'Person')",
+    OnFailure = "Complete(xhr, status, 'Person')"
+}))
+{
+
+    <div class="searchform">
+        <ul class="nav navbar-nav">
+            <li>
+                <input type="hidden" name="id" value='@ViewBag.categId ' />
+                <label>minimum price</label>
+                <input type="text" name="LessPrice" value='0' onkeypress="return isNumber(event)" class="form-control" />
+            </li>
+            <li>
+                <label>max price</label>
+                <input type="text" name="maxPrice" value='10000' onkeypress="return isNumber(event)" class="form-control" />
+            </li>
+            <li>
+                <label>brand</label>
+                @Html.DropDownList("Brand", null,"All", htmlAttributes: new { @class = "form-control" })
+            </li>
+            <li>
+                <label>color</label>
+                <input type="text" name="color" value='' pattern="([a-zA-Z]| |/|\|#|$|%|&)+" class="form-control" />
+            </li>
+
+
+
+        </ul>
+
+
+
+    </div>
+    <div class="col-sm-9  text-center">
+        <button type="submit" id="submet" class="submet">
+
+            <i class="fa fa-search fa-1x icon-a"> S e a r c h </i>
+
+        </button>
+    </div>
+
+
+}<!--end of ajax search-->
+
+
+<div class="row">
+    <div class="col-sm-9 padding-right">
+        <div class="features_items">
+            <!--features_items-->
+            <h2 class="title text-center">Features Items</h2>
+            @foreach (var item in Model)
+            {
+                decimal? originalPrice = decimal.Parse(Html.DisplayFor(modelItem => item.ProductOriginalPrices.FirstOrDefault().OriginalPrice).ToString());
+
+
+                var productPromotion = item.ProductPromotions.FirstOrDefault();
+
+                var discountRule = item.DiscountRules.FirstOrDefault();
+
+                //end of compute final price
+
+
+                var productId = @Html.AttributeEncode(item.Id).ToString();
+                decimal? finalprice = decimal.Parse(@FinalPriceHelper.FinalPriceVal(originalPrice, productPromotion, discountRule, item.Id).ToString());
+
+                <h1><input type="hidden" value="@Html.AttributeEncode(item.Id)" id="@Html.AttributeEncode(item.Id)ProductId" name="SelectedLogin" /> </h1>
+                <h1><input type="hidden" value="@Html.AttributeEncode(item.Name)" id="@Html.AttributeEncode(item.Id)ProductName" /></h1>
+                <h1><input type="hidden"  value="@FinalPriceHelper.FinalPriceVal(originalPrice, productPromotion, discountRule,item.Id).ToString()" id="@Html.AttributeEncode(item.Id)orPrice" /></h1>
+                <h1><input type="hidden" value="@Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DrQty)" id="@Html.AttributeEncode(item.Id)drqty" /></h1>
+
+                        <h1> </h1>
+                        <input type="hidden" id="stock" value="@Html.DisplayFor(modelItem => item.InventoryTrans.LastOrDefault().ItQty)" />
+                        <input type="hidden" id="@Html.AttributeEncode(item.Id)finalprice" value="@FinalPriceHelper.DescountRolePrice(finalprice,discountRule).ToString()" />
+
+                           <a class="cbp-vm-image" href="single.html">
+                            <input type="hidden" id="@item.Id" value="@item.TotalVote" />
+                        </a>
+
+
+
+
+
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="~/@Html.DisplayFor(modelItem => item.ProductImages.FirstOrDefault().ImageLink)/@Html.DisplayFor(modelItem => item.ProductImages.FirstOrDefault().ImageName)" id="@Html.DisplayFor(modelItem => item.Id)imgUrl" class="img-responsive zoom-img" />
+                                     <!--FinalPriceHelper to add final price after original price
+                                                FinalPriceHelper is in appCode folder so it is work on the run time onle 
+                                                    so we have an error for each use -->  
+                                        
+                                        @FinalPriceHelper.FinalPrice(originalPrice, productPromotion, discountRule )
+
+
+
+
+                                          <p>@Html.DisplayFor(modelItem => item.Name, new { @class = "control-label" })</p>
+                                        @if (!string.IsNullOrEmpty(@Html.DisplayFor(modelItem => item.InventoryTrans.LastOrDefault().ItQty).ToString()))
+                                        {
+
+                                            <input type="submit" value="addt to cart" id="addtocart" onclick="addMe(@productId);" class="btn btn-default add-to-cart" />
+
+                                        }
+                                        else
+                                        {<span style="color:red"> Not available </span>}
+
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <p>
+                                                <!--FinalPriceHelper to add final price after original price
+                                                    FinalPriceHelper is in appCode folder so it is work on the run time onle
+                                                    so we have an error for each use -->
+
+                                                @FinalPriceHelper.FinalPrice(originalPrice, productPromotion, discountRule)
+
+
+                                            </p>
+                                               
+                                            <h2>$@Html.DisplayFor(modelItem => item.ProductOriginalPrices.FirstOrDefault().OriginalPrice)</h2>
+                                            @{
+                                                var firstOrDefault = item.DiscountRules.FirstOrDefault();
+                                            }
+                                            @if (firstOrDefault != null && (firstOrDefault.EndDate >= DateTime.Now))
+                                            {
+                                                <p>by @Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DrQty) peaces with @Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DiscountPercentage)% descount</p>
+                                            }
+                                            else
+                                            {
+                                                <p>@Html.DisplayFor(modelItem => item.Name, new {@class = "control-label"})</p>
+                                            }
+                                            @if (!string.IsNullOrEmpty(@Html.DisplayFor(modelItem => item.InventoryTrans.LastOrDefault().ItQty).ToString()))
+                                            {
+
+                                                <input type="submit" value="addt to cart" id="addtocart" onclick="addMe(@productId);" class="btn btn-default add-to-cart"/>
+
+                                            }
+                                            else
+                                            {<span style="color: red"> we are sorry product is Not available</span>}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li>
+                                            @using Microsoft.AspNet.Identity
+                                            @if (Request.IsAuthenticated)
+                                            {
+                                                @Html.Partial("_Rating", item)
+                                            }
+                                        </li>
+                                        <li>@Html.ActionLink("more details", "ProductsDetails", new { id = item.Id })</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                                                }
+            <script>
+                $(function complete(xhr, status, entityName) {
+
+                });
+
+                $(function () {
+
+                    //tabs: http://twitter.github.com/bootstrap/javascript.html#tabs
+                    $('#myTab a')
+                        .click(function (e) {
+                            e.preventDefault();
+                            $(this).tab('show');
+                        });
+
+                    // ratting system: https://github.com/irfan/jquery-star-rating
+                    $('.ratting-item')
+                        .rating(function (vote, event) {
+                            var anchor = $(event.currentTarget),
+                                pid = anchor.closest(".ratting-item").data("pid"),
+                                url = '@Url.Action("RateProduct", "Services")';
+
+                            // show message while doing the database round trip
+                            $('.ratting-item[data-pid=' + pid + ']')
+                                .next()
+                                .text("Placing your vote...");
+
+                            $.ajax({
+                                url: url,
+                                type: "GET",
+                                data: { rate: vote, id: pid },
+                                success: function (data) {
+
+                                    if (data.success) {
+                                        // all went well, here you can say Thank you
+                                        $('.ratting-item[data-pid=' + data.pid + ']')
+                                            .next()
+                                            .text("Voted ! (product id: " + data.pid + ")");
+                                    } else {
+                                        // There must be an Exception error, let's show it
+                                        $('.ratting-item[data-pid=' + data.pid + ']')
+                                            .next()
+                                            .text("Something went wrong...");
+                                    }
+                                },
+                                error: function (err) {
+                                    // the call thrown an error
+                                    $('.result').text(err);
+                                },
+                                complete: function () {
+                                    //$(".loading").hide();
+                                }
+                            });
+                        });
+                    //.addClass("fullStar")
+
+
+                });
+
+
+                $(document)
+                    .ready(function () {
+
+
+                        $('.ratting-item')
+                            .each(function () {
+
+                                var $input = $(this);
+                                var pid = $input.attr("data-pid");
+
+                                var rate = $('#' + pid).val();
+
+                                if (rate == null) {
+                                    rate = 0;
+                                }
+
+                                $input.find('.star')
+                                    .each(function () {
+
+                                        var $star = $(this);
+                                        var val1 = $star.attr("title");
+
+
+                                        if (val1 <= rate) {
+                                            $star.addClass("fullStar");
+
+                                        }
+                                    });
+
+                            });
+
+
+                    });
+
+            </script>
+            <br />
+        </div>
+        page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("SearchProducts", new { page, id = ViewBag.categId }))
+    </div><!--/recommended_items-->
+
+</div>
+
+
+
+
+<script>
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
+
+
+
+
+
+
+<!--rating script-->

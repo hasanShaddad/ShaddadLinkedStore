@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B11A67B-9CFC-4A49-BC3F-0F0863669686}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elmatgar.persistence</RootNamespace>
+    <AssemblyName>Elmatgar.persistence</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Configurations\ApplicationUserConfiguration.cs" />
+    <Compile Include="Configurations\AttributeConfiguration.cs" />
+    <Compile Include="Configurations\BrandsConfiguration.cs" />
+    <Compile Include="Configurations\CategoriesConfiguration.cs" />
+    <Compile Include="Configurations\CitiesConfiguration.cs" />
+    <Compile Include="Configurations\CountriesConfiguration.cs" />
+    <Compile Include="Configurations\CustomerPaymentMethodConfiguration.cs" />
+    <Compile Include="Configurations\CustomersConfiguration.cs" />
+    <Compile Include="Configurations\DataAccessConfiguration.cs" />
+    <Compile Include="Configurations\DataLogConfiguration.cs" />
+    <Compile Include="Configurations\DepartmentsConfiguration.cs" />
+    <Compile Include="Configurations\DiscountRulesConfiguration.cs" />
+    <Compile Include="Configurations\ExceptionAccessConfiguration.cs" />
+    <Compile Include="Configurations\InventoryTransConfiguration.cs" />
+    <Compile Include="Configurations\KitProductsConfiguration.cs" />
+    <Compile Include="Configurations\OrderDetailsConfiguration.cs" />
+    <Compile Include="Configurations\OrderLineTransConfiguration.cs" />
+    <Compile Include="Configurations\ProductAttributesConfiguration.cs" />
+    <Compile Include="Configurations\ProductBarcodesConfiguration.cs" />
+    <Compile Include="Configurations\ProductsConfiguration.cs" />
+    <Compile Include="Configurations\SupplyOrderDetailsConfiguration.cs" />
+    <Compile Include="Configurations\SupplyOrderConfiguration.cs" />
+    <Compile Include="Configurations\ReturnsConfiguration.cs" />
+    <Compile Include="Configurations\OrderConfiguration.cs" />
+    <Compile Include="Configurations\SuppliersConfiguration.cs" />
+    <Compile Include="Configurations\SupplierStoresConfiguration.cs" />
+    <Compile Include="Configurations\UsersConfiguration.cs" />
+    <Compile Include="Configurations\ZonesConfiguration.cs" />
+    <Compile Include="GRepositories\adresses\AreasRepository.cs" />
+    <Compile Include="GRepositories\ApplicationRole.cs" />
+    <Compile Include="GRepositories\AttributeHeaders\AttributeHeadersRepository.cs" />
+    <Compile Include="GRepositories\Brands\BrandsRepository\BrandsRepository.cs" />
+    <Compile Include="GRepositories\DataRepository.cs" />
+    <Compile Include="GRepositories\DiscountRules\DiscountRuleasDipository.cs" />
+    <Compile Include="GRepositories\DomainUnits\AttributeHeaderUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\BrandsUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\DiscountRulesUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\InventoryUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\KitProductUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\OrdersUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductAttributeUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductBarCodeUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductImageUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductOriginalPricesUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductPromotionsUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\ProductVotesUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\SupplierUnit.cs" />
+    <Compile Include="GRepositories\Inventory\InventoryTransRepository.cs" />
+    <Compile Include="GRepositories\Inventory\ReturnRepository.cs" />
+    <Compile Include="GRepositories\KitProduct\KitPRoductRepository.cs" />
+    <Compile Include="GRepositories\Orders\OrderDetailsRepository.cs" />
+    <Compile Include="GRepositories\Orders\OrderPaymentRepository.cs" />
+    <Compile Include="GRepositories\Orders\OrderRepository.cs" />
+    <Compile Include="GRepositories\ProductAttribute\ProductAttributeRepository.cs" />
+    <Compile Include="GRepositories\ProductBarCodes\ProducrBarCodeRepository.cs" />
+    <Compile Include="GRepositories\ProductImage\ProductImageRepository.cs" />
+    <Compile Include="GRepositories\ProductOriginalPrices\ProductOriginalPricesDataRepository.cs" />
+    <Compile Include="GRepositories\ProductPromotions\ProductPromotionsRepository.cs" />
+    <Compile Include="GRepositories\Products\ProductRepository.cs" />
+    <Compile Include="GRepositories\ProductVotes\ProductVotesRepository.cs" />
+    <Compile Include="GRepositories\Supply\SupplyOrderDetailsRepository.cs" />
+    <Compile Include="GRepositories\Supply\SupplyOrderPaymentsRepository.cs" />
+    <Compile Include="GRepositories\Supply\SupplyOrderRepository.cs" />
+    <Compile Include="GRepositories\Supply\SupplierRepository.cs" />
+    <Compile Include="GRepositories\Supply\SupplierStoresRepository.cs" />
+    <Compile Include="HelperClasses\ImageResult.cs" />
+    <Compile Include="HelperClasses\ImageUpload.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Migrations\201610131001273_Initial.cs" />
+    <Compile Include="Migrations\201610131001273_Initial.Designer.cs">
+      <DependentUpon>201610131001273_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610251811228_UpdateModels_init.cs" />
+    <Compile Include="Migrations\201610251811228_UpdateModels_init.Designer.cs">
+      <DependentUpon>201610251811228_UpdateModels_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611012137219_editUsersAndCustomerHassanShaddad.cs" />
+    <Compile Include="Migrations\201611012137219_editUsersAndCustomerHassanShaddad.Designer.cs">
+      <DependentUpon>201611012137219_editUsersAndCustomerHassanShaddad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611020636378_TestFirstDDD.cs" />
+    <Compile Include="Migrations\201611020636378_TestFirstDDD.Designer.cs">
+      <DependentUpon>201611020636378_TestFirstDDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611080943229_orderedit.cs" />
+    <Compile Include="Migrations\201611080943229_orderedit.Designer.cs">
+      <DependentUpon>201611080943229_orderedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611181148132_matchChanges.cs" />
+    <Compile Include="Migrations\201611181148132_matchChanges.Designer.cs">
+      <DependentUpon>201611181148132_matchChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611181235250_EditAttributeHeaderName.cs" />
+    <Compile Include="Migrations\201611181235250_EditAttributeHeaderName.Designer.cs">
+      <DependentUpon>201611181235250_EditAttributeHeaderName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611190009429_categoryImages.cs" />
+    <Compile Include="Migrations\201611190009429_categoryImages.Designer.cs">
+      <DependentUpon>201611190009429_categoryImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611202258460_FexingRoleModles.cs" />
+    <Compile Include="Migrations\201611202258460_FexingRoleModles.Designer.cs">
+      <DependentUpon>201611202258460_FexingRoleModles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611231455321_aaa.cs" />
+    <Compile Include="Migrations\201611231455321_aaa.Designer.cs">
+      <DependentUpon>201611231455321_aaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241348529_productattrId.cs" />
+    <Compile Include="Migrations\201611241348529_productattrId.Designer.cs">
+      <DependentUpon>201611241348529_productattrId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241513186_attributeConfig.cs" />
+    <Compile Include="Migrations\201611241513186_attributeConfig.Designer.cs">
+      <DependentUpon>201611241513186_attributeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241528106_newmigrationforattribute.cs" />
+    <Compile Include="Migrations\201611241528106_newmigrationforattribute.Designer.cs">
+      <DependentUpon>201611241528106_newmigrationforattribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611271312509_AddingActiveFalgeToAllModels.cs" />
+    <Compile Include="Migrations\201611271312509_AddingActiveFalgeToAllModels.Designer.cs">
+      <DependentUpon>201611271312509_AddingActiveFalgeToAllModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612080909225_secoundlanguge.cs" />
+    <Compile Include="Migrations\201612080909225_secoundlanguge.Designer.cs">
+      <DependentUpon>201612080909225_secoundlanguge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612102107240_ordersforcheck.cs" />
+    <Compile Include="Migrations\201612102107240_ordersforcheck.Designer.cs">
+      <DependentUpon>201612102107240_ordersforcheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612102202435_orderdetailsCheckOut.cs" />
+    <Compile Include="Migrations\201612102202435_orderdetailsCheckOut.Designer.cs">
+      <DependentUpon>201612102202435_orderdetailsCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612102208564_editTotalDetails.cs" />
+    <Compile Include="Migrations\201612102208564_editTotalDetails.Designer.cs">
+      <DependentUpon>201612102208564_editTotalDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612120738520_orderscountry.cs" />
+    <Compile Include="Migrations\201612120738520_orderscountry.Designer.cs">
+      <DependentUpon>201612120738520_orderscountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612120757561_OrdersCaddress.cs" />
+    <Compile Include="Migrations\201612120757561_OrdersCaddress.Designer.cs">
+      <DependentUpon>201612120757561_OrdersCaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701222254411_supplierOrdersDateNotReq.cs" />
+    <Compile Include="Migrations\201701222254411_supplierOrdersDateNotReq.Designer.cs">
+      <DependentUpon>201701222254411_supplierOrdersDateNotReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="GRepositories\adresses\AdressContext.cs" />
+    <Compile Include="GRepositories\adresses\CitiesRepository.cs" />
+    <Compile Include="GRepositories\adresses\CountriesRepository.cs" />
+    <Compile Include="GRepositories\Categories\CategoriesRepository.cs" />
+    <Compile Include="GRepositories\departments\DepartmentsRepository.cs" />
+    <Compile Include="GRepositories\DomainUnits\AdressUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\CategoriesUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\DepartmentsUnit.cs" />
+    <Compile Include="GRepositories\DomainUnits\UsersUnit.cs" />
+    <Compile Include="GRepositories\IdentityModels.cs" />
+    <Compile Include="GRepositories\users\CustomersRepository.cs" />
+    <Compile Include="GRepositories\users\UsersRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elmatgar.Core\Elmatgar.Core.csproj">
+      <Project>{73042b21-a126-4f27-a371-3d2bc0a76aa1}</Project>
+      <Name>Elmatgar.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610131001273_Initial.resx">
+      <DependentUpon>201610131001273_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610251811228_UpdateModels_init.resx">
+      <DependentUpon>201610251811228_UpdateModels_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611012137219_editUsersAndCustomerHassanShaddad.resx">
+      <DependentUpon>201611012137219_editUsersAndCustomerHassanShaddad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611020636378_TestFirstDDD.resx">
+      <DependentUpon>201611020636378_TestFirstDDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080943229_orderedit.resx">
+      <DependentUpon>201611080943229_orderedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611181148132_matchChanges.resx">
+      <DependentUpon>201611181148132_matchChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611181235250_EditAttributeHeaderName.resx">
+      <DependentUpon>201611181235250_EditAttributeHeaderName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611190009429_categoryImages.resx">
+      <DependentUpon>201611190009429_categoryImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611202258460_FexingRoleModles.resx">
+      <DependentUpon>201611202258460_FexingRoleModles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611231455321_aaa.resx">
+      <DependentUpon>201611231455321_aaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241348529_productattrId.resx">
+      <DependentUpon>201611241348529_productattrId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241513186_attributeConfig.resx">
+      <DependentUpon>201611241513186_attributeConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241528106_newmigrationforattribute.resx">
+      <DependentUpon>201611241528106_newmigrationforattribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611271312509_AddingActiveFalgeToAllModels.resx">
+      <DependentUpon>201611271312509_AddingActiveFalgeToAllModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612080909225_secoundlanguge.resx">
+      <DependentUpon>201612080909225_secoundlanguge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612102107240_ordersforcheck.resx">
+      <DependentUpon>201612102107240_ordersforcheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612102202435_orderdetailsCheckOut.resx">
+      <DependentUpon>201612102202435_orderdetailsCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612102208564_editTotalDetails.resx">
+      <DependentUpon>201612102208564_editTotalDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612120738520_orderscountry.resx">
+      <DependentUpon>201612120738520_orderscountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612120757561_OrdersCaddress.resx">
+      <DependentUpon>201612120757561_OrdersCaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701222254411_supplierOrdersDateNotReq.resx">
+      <DependentUpon>201701222254411_supplierOrdersDateNotReq.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

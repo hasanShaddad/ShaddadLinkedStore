@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Elmatgar.Core.Models.SupplyOrderDetails>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br /><br />
+<h2>Deleted Supply Order Details Index</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplyOrders.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplyOrders.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @using (Html.BeginForm("Unlock", "SupplyOrderDetails", new { id = item.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                { @Html.AntiForgeryToken()
+                    <input type="submit" value="Restore" class="btn btn-info glyphicon glyphicon-lock" />
+                }
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+<div class="form-actions no-color">
+    <a href="@Url.Action("Index", "SupplyOrderDetails")" class="btn btn-primary">
+        <div class="glyphicon glyphicon-arrow-left">  </div> Back to  Index List
+    </a>
+
+</div>

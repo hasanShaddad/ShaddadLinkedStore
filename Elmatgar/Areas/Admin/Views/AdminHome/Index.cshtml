@@ -1,0 +1,252 @@
+﻿@model Elmatgar.ViewModels.PackAdminIndexViewModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br/><br /><br /><br />
+<div class="row align-content-center">
+    <h1>back admin dash board</h1>
+ 
+    <p class="lead">welcome to your back admin DashBoard .</p>
+</div>
+ 
+<div class="row align-content-center">
+
+    <div class="col-md-4">
+        <a href="../Admin/ApplicationUsers">
+            <div style="background-color: #c8e6d2; height: 100px; width: 200px; margin: 20px; text-align: center;padding: 10px">
+                <h3>users and roles</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="../Admin/Categories">
+            <div style="background-color: #dee777; height: 100px; width: 200px; margin: 20px; text-align: center; padding: 10px">
+                <h3>categories</h3>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="../Admin/Products">
+            <div style="background-color: #b4919d; height: 100px; width: 200px; margin: 20px; text-align: center; padding: 10px">
+                <h3>products</h3>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="col-md-4">
+        <a href="../Admin/SupplyOrder">
+            <div style="background-color: #efb84d; height: 100px; width: 200px; margin: 20px;text-align: center;padding: 10px">
+                <h3>purchas orders</h3>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="../Admin/OrdersAdmin">
+            <div style="background-color: #e67e7e; height: 100px; width: 200px; margin: 20px; text-align: center; padding: 10px">
+                <h3>sales orders</h3>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="../Admin/ProductPromotions">
+            <div style="background-color: #a8adb4; height: 100px; width: 200px; margin: 20px; text-align: center; padding: 10px">
+                <h3>promoted products</h3>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="container body-content">
+
+
+    <div class="container">
+        <div class="allaround">
+            <h1 class="lead">sales orders last mounth .</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <canvas id="salaescanvas" height="150" width="500"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            @*//products*@
+            <h1 class="lead">promoted products last mounth .</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <canvas id="promotedcanvas" height="150" width="400"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="border: 2px solid gray;">
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <p>Best Sellers </p>
+    </div>
+
+    <div>
+     
+        <h1 class="lead">Customers geographocal distribution  .</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    <canvas id="Geocanvas" height="150" width="400"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+
+<script src="~/Scripts/Chart.js"></script>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+
+        //هنا بنعرف متغير ياخد الدوال الى راجعة من الفنكشن بتاعت الأناليسيز واحدة للكلمات و التانية للقيم
+        //var promoted = [["first week", "second week", "therd week", "last week"], [20, 10, 5, 2]];
+        var promoted = [["first week", "second week", "third week", "Forth Week", "last week"],
+            [@Model.OrdersFirstWeek, @Model.OrdersSecondWeek, @Model.OrdersThirdWeek, @Model.OrdersForthWeek,@Model.OrdersLastWeek]];
+        //دى داتا للرسم البيانى
+        var barChartData = {
+            //دى الأرى بتاعت الكلمات
+            labels: promoted[0],
+            datasets: [
+                {
+                    //دى الوان التشارت
+                    fillColor: "green",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    //دى الأرى بتاعت القيم
+                    data: promoted[1]
+                }
+            ]
+
+        }
+        //هنا هنبعت البيانات للأسكريبت بتاع الرسم البيانى
+        var ctx = document.getElementById("salaescanvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(barChartData, {
+            responsive: true
+        });
+
+
+
+    });
+
+
+
+
+    //second ///chart ////////////////////////////////////
+    $(document).ready(function () {
+
+
+
+        //هنا بنعرف متغير ياخد الدوال الى راجعة من الفنكشن بتاعت الأناليسيز واحدة للكلمات و التانية للقيم
+        //var products = [["first week", "second week", "therd week", "last week"], [10, 3, 5, 9]];
+        var products = [["first week", "second week", "third week", "Forth Week", "last week"],
+            [@Model.SupplyOrdersFirstWeek, @Model.SupplyOrdersSecondWeek, @Model.SupplyOrdersThirdWeek, @Model.SupplyOrdersForthWeek,@Model.SupplyOrdersLastWeek]];
+        //دى داتا للرسم البيانى
+        var prosuctsbarChartData = {
+            //دى الأرى بتاعت الكلمات
+            labels: products[0],
+            datasets: [
+                {
+                    //دى الوان التشارت
+                    fillColor: "red",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    //دى الأرى بتاعت القيم
+                    data: products[1]
+                }
+            ]
+
+        }
+        //هنا هنبعت البيانات للأسكريبت بتاع الرسم البيانى
+        var ctx = document.getElementById("promotedcanvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(prosuctsbarChartData, {
+            responsive: true
+        });
+
+
+    });
+
+    //Third chart ////////////////////////////////////
+    $(document).ready(function () {
+       
+        var fArray = [];
+
+        @foreach (var d in Model.CustomerGeoCity)
+        {
+        @:fArray.push("@d");
+    }
+        var sArray = [];
+
+        @foreach (var d in Model.CustomerGeoCount)
+        {
+            @:sArray.push("@d");
+           
+        }
+        //هنا بنعرف متغير ياخد الدوال الى راجعة من الفنكشن بتاعت الأناليسيز واحدة للكلمات و التانية للقيم
+        
+        var customerData = [fArray, sArray];
+        //دى داتا للرسم البيانى
+        var custChartData = {
+            //دى الأرى بتاعت الكلمات
+            labels: customerData[0],
+            datasets: [
+                {
+                    //دى الوان التشارت
+                    fillColor: "red",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    //دى الأرى بتاعت القيم
+                    data: customerData[1]
+                }
+            ]
+
+        }
+        //هنا هنبعت البيانات للأسكريبت بتاع الرسم البيانى
+        var ctx = document.getElementById("Geocanvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(custChartData, {
+            responsive: true
+        });
+
+
+
+    });
+</script>

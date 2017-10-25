@@ -1,0 +1,162 @@
+﻿@model Elmatgar.Core.Models.Products
+ 
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+ 
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brands.BrandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brands.BrandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KitProducts.KitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitProducts.KitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KitFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="modal fade" id="PriceModel" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">add details</h4>
+            </div>
+            <div class="modal-body">
+
+                @{Html.RenderAction("Create", "ProductOriginalPrices", new { id = Model.Id });}
+                
+                <div id="result"></div>
+                
+                @*@Ajax.ActionLink("Create", "ProductOriginalPrices", new { id = Model.Id });*@
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="imageModel" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">add details</h4>
+            </div>
+            <div class="modal-body">
+
+  
+                
+                @{Html.RenderAction("Create", "ProductImages", new { id = Model.Id });}
+
+               
+                
+                <div id="image"></div>
+                @*@Ajax.ActionLink("Create", "ProductOriginalPrices", new { id = Model.Id });*@
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#PriceModel">Add Price </button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#imageModel">Add Images</button>
+   
+</p>

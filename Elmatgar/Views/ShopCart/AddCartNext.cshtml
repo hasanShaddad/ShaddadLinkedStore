@@ -1,0 +1,20 @@
+﻿@using Action = Antlr.Runtime.Misc.Action
+@model List<Elmatgar.Core.Models.OrderDetails>
+
+@foreach (var item in Model)
+{
+    @Html.DisplayFor(modelItem => item.OrderQuantity)<br/>
+    @Html.DisplayFor(modelItem => item.OrderId)
+    <br/>
+     @Html.DisplayFor(modelItem => item.ProductId)
+     <br/>
+     @Html.DisplayFor(modelItem => item.CreatedBy)
+}
+@foreach (var item in Model.Take(1))
+{
+ 
+    @Html.DisplayFor(modelItem => item.OrderId)
+     @Html.ActionLink("submet", "submet",null, new {OrderNO = item.OrderId}, new {@class = "btn btn-success btn-xs"})
+  
+}
+

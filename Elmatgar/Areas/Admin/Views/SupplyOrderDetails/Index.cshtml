@@ -1,0 +1,135 @@
+﻿ 
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.SupplyOrderDetails>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br/><br/><br/><br/>
+<div class="searchform " align="right">
+    @using (Html.BeginForm("Index", "SupplyOrderDetails", FormMethod.Get, new { id = ViewBag.SorderId, @class = "form-inline" }))
+    {
+
+        @Html.Label("search", "product name ", new { @class = "control-label" })
+        @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control" })
+        <input type="submit" value="search" class="btn btn-default" />
+    }
+</div>
+<h2>Supply Order Details Index </h2>
+
+
+<p>
+
+    <a href="@Url.Action("Create", "SupplyOrderDetails", new {orderNo = ViewBag.SorderId})" class="btn btn-primary ">
+        <i class="glyphicon glyphicon-plus"> Create </i>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+
+            @Ajax.ActionLink("Product Name", "Index", "SupplyOrderDetails", new {id = ViewBag.SorderId , sort = ViewBag.ProductNameSort, search = ViewBag.CurrentSearch},
+                new AjaxOptions {HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace})
+        </th>
+        <th>
+            CreatedBy
+        </th>
+        <th>
+
+            @Ajax.ActionLink("Quantity", "Index", "SupplyOrderDetails", new {id = ViewBag.SorderId , sort = ViewBag.QuntitySort, search = ViewBag.CurrentSearch},
+                new AjaxOptions {HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace})
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdatedBy)
+            </th>*@
+
+        <th>
+           <a href="@Url.Action("DeletedOrderIndex", "SupplyOrderDetails")" class="btn btn-warning">
+
+                   <i class="glyphicon glyphicon-remove"> Show Deleted Supply Order Detials</i>>
+               
+               </a>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplyOrders.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+        </td>*@
+            <td>
+
+
+                <a href="@Url.Action("Edit", "SupplyOrderDetails", new {id = item.Id})" class="btn btn-default">
+                    <i class="glyphicon glyphicon-edit" title="Edite Order Data"> </i>
+                </a>
+                <a href="@Url.Action("Details", "SupplyOrderDetails", new {id = item.Id})" class="btn btn-info">
+                    <i class="glyphicon glyphicon-info-sign" title="Show Order Data"> </i>
+                </a>
+                <a href="@Url.Action("Delete", "SupplyOrderDetails", new {id = item.Id})" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-remove" title="Delete Order"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#SNsearch").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "@Url.Action("SupNameComplete")",
+                    type: "POST",
+                    dataType: "json",
+                    data: { Prefix: request.term },
+                    success: function(data) {
+                        response($.map(data,
+                            function(item) {
+                                return { label: item.SSupplierName, value: item.SSupplierName };
+                            }));
+                    }
+                });
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+    </script>*@
+}

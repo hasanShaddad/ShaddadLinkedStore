@@ -1,0 +1,49 @@
+﻿
+    <!-- product view -->
+  <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in  Mainvm.Poducts">
+        <div class="thumbnail">
+            <figure>
+                <div>
+                    <img ng-src="{{product.ImageUrl.url}}" alt="{{product.Title}}" height="100" width="100">
+                </div>
+                <figcaption>
+
+                    <h4>Price : {{product.Price}}$</h4>
+                    <br />
+                    <p>
+                        Stock Quntity :{{product.StockQuntity}}
+                    </p>
+
+                    <div ng-hide="product.IsAdded">
+                        <!--<button ng-click="vm.AddToCartClick(product)">Add to cart</button>-->
+                        <a href="#" class="btn btn-default add-to-cart" ng-click="Mainvm.AddToCartClick(product)">
+
+                            <i class="fa fa-shopping-cart"></i>Add to cart
+                        </a>
+                    </div>
+                    <!--<div ng-show="product.IsAdded">
+                        <button disabled="disabled">Added to cart</button>
+
+                    </div>-->
+                </figcaption>
+            </figure>
+            <div class="caption">
+
+                <h4>
+                    <a href="#">{{product.Title}}</a>
+                </h4>
+                <p>See more details at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+            </div>
+            <div class="ratings">
+                <p class="pull-right">15 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+ 

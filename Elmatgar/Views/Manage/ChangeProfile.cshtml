@@ -1,0 +1,148 @@
+﻿@model Elmatgar.Core.Models.ApplicationUser
+@{
+    ViewBag.Title = "ChangeProfile";
+   
+}
+
+<h2> @ViewBag.Title</h2>
+
+@using (Html.BeginForm("ChangeProfile", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+ 
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    
+    @*/*Users extra columns */*@
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LasttName, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LasttName, new {@class = "form-control"})
+        </div>
+    </div>
+        @*/*Users extra columns for customers*/*@
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customers.CHomePhone, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Customers.CHomePhone, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customers.CWorkPhone, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Customers.CWorkPhone, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customers.CCountryId, "CCountryId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Customers.CCountryId", (IEnumerable<SelectListItem>)ViewData["Customers_CCountryId"], "Select Country", new { @class = "form-control", @onchange = "FillCity()" })
+                @Html.ValidationMessageFor(m => m.Customers.CCountryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customers.CCityId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Customers.CCityId,
+                new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "CtCityName"),
+                "Select city",
+                new { @class = "form-control", @onchange = "FillArea()" })
+                @Html.ValidationMessageFor(m => m.Customers.CCityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customers.CAreaId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Customers.CAreaId,
+                new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "AAreaName"),
+                "Select Area",
+                new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Customers.CAreaId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customers.CAddress, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Customers.CAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Customers.CAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Update" />
+            </div>
+        </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+    function FillCity() {
+    var countryId = $('#Customers_CCountryId').val();
+
+    $.ajax({
+        type: "GET",
+        dataType: 'json',
+        url: '/DropList/FillCity',
+        data: { State: countryId },
+        contentType: 'application/json; charset=utf-8',
+        success: function (cities) {
+
+            $("#Customers_CCityId").html(""); // clear before appending new list
+        var tst = "";//var to check if there is no elements in cities
+            $.each(cities, function (i, city) {
+                $("#Customers_CCityId").append(
+                    $('<option></option>').val(city.Id).html(city.CtCityName));
+                if (city.CtCityName === "nothing to select") {
+                    tst = "nothing";
+                }
+            });
+            if (tst !== "nothing") {
+                FillArea();//fill areas with elements
+            }else
+
+                $("#Customers_CAreaId").html("");//clear areas options
+            $("#Customers_CAreaId").append(
+                       $('<option></option>').val(1).html("nothing to select"));
+        }
+    });
+    }
+
+
+    function FillArea() {
+
+        var cCityId = $('#Customers_CCityId').val();
+
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            url: '/DropList/FillArea',
+            data: { state: cCityId },
+            contentType: 'application/json; charset=utf-8',
+            success: function (areas) {
+
+                $("#Customers_CAreaId").html(""); // clear before appending new list
+                $.each(areas, function (i, area) {
+                    $("#Customers_CAreaId").append(
+                        $('<option></option>').val(area.Id).html(area.AAreaName));
+                });
+            }
+        });
+    }
+    </script>
+}

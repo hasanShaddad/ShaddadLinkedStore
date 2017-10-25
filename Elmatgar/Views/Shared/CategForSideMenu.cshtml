@@ -1,0 +1,174 @@
+﻿
+@using Elmatgar.Core.Models
+@model IEnumerable<Elmatgar.Core.Models.Categories>
+
+<h2>Category</h2>
+<div class="panel-group category-products" id="accordian">
+    <!--category-productsr-->
+
+    @foreach (var item in Model)
+    {
+        <div class="panel panel-default">
+            @GetMenue(item)
+        </div>
+    }
+</div>
+    
+    
+    
+    
+    
+
+@helper GetMenue(Categories categ)
+    {
+HttpCookie lngCookie = HttpContext.Current.Request.Cookies["language"];
+
+    
+        if (categ.Parent == null)
+        {
+
+
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordian" href="#@Html.DisplayFor(modelitem => categ.CategoryName)">
+                   
+                    @if (lngCookie != null && lngCookie.Value == "ar-SA")
+                    {
+                        @Html.DisplayFor(modelitem => categ.SLCategoryName)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelitem => categ.CategoryName)
+                    }
+
+                  
+                    @if (categ.Children.Count > 0) //2
+                    {
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                    }
+                </a>
+            </h4>
+        </div>
+    if (categ.Children.Count > 0) //2
+    {
+            <div id="@Html.DisplayFor(modelitem => categ.CategoryName)" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul>
+
+                        @foreach (Categories subItem in categ.Children)
+                        {
+
+                            if (subItem.Children.Count > 0)
+                            {
+
+                                @GetMenue(subItem)
+                            }
+                            else if (subItem.Children.Count == 0)
+                            {
+                                if (lngCookie != null && lngCookie.Value == "ar-SA")
+                                {
+                                    //if item.parent=item && cheldren==0
+                                    <li class="dir"><a href="@Url.Action("Products","Home",new {id=subItem.Id})">@Html.DisplayFor(modelitem => subItem.SLCategoryName)</a></li>
+
+                                }
+                                else
+                                {
+                                    //if item.parent=item && cheldren==0
+                                    <li class="dir"><a href="@Url.Action("Products","Home",new {id=subItem.Id})">@Html.DisplayFor(modelitem => subItem.CategoryName)</a></li>
+
+                                }
+                            }
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+    }
+
+
+}
+else
+{
+
+
+    if (categ.Children.Count > 0) //2
+    {
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#@Html.DisplayFor(modelitem => categ.CategoryName)">
+
+
+                        @if (categ.Children.Count > 0) //2
+                        {
+                            if (lngCookie != null && lngCookie.Value == "ar-SA")
+                            {
+                                <span style="color: thistle">@Html.DisplayFor(modelitem => categ.SLCategoryName)</span>
+                            }
+                            else
+                            {
+                                <span style="color: thistle">@Html.DisplayFor(modelitem => categ.CategoryName)</span>
+                            }
+                        }
+                        else
+                        {
+                            if (lngCookie != null && lngCookie.Value == "ar-SA")
+                            {
+                                <a href="@Url.Action("Products", "Home", new {id = categ.Id})">@Html.DisplayFor(modelitem => categ.SLCategoryName)</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Products", "Home", new {id = categ.Id})">@Html.DisplayFor(modelitem => categ.CategoryName)</a>
+                            }
+                        }
+                    </a>
+                </h4>
+            </div>
+                <div id="@Html.DisplayFor(modelitem => categ.CategoryName)">
+                    <div class="panel-body">
+                        <ul>
+
+
+                            @foreach (Categories subItem in categ.Children)
+                            {
+
+                                if (subItem.Children.Count > 0)
+                                {
+
+                                    @GetMenue(subItem)
+                                }
+                                else if (subItem.Children.Count == 0)
+                                {
+                                    if (lngCookie != null && lngCookie.Value == "ar-SA")
+                                    {
+                                        //if item.parent=item && cheldren==0
+                                        <li class="dir"><a href="@Url.Action("Products", "Home", new {id = subItem.Id})">@Html.DisplayFor(modelitem => subItem.SLCategoryName)</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="dir"><a href="@Url.Action("Products", "Home", new {id = subItem.Id})">@Html.DisplayFor(modelitem => subItem.CategoryName)</a></li>
+
+                                    }
+                                }
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+    }
+    else
+    {
+        if (lngCookie != null && lngCookie.Value == "ar-SA")
+        {
+            <li><a href="@Url.Action("Products", "Home", new {id = categ.Id})">@Html.DisplayFor(modelitem => categ.SLCategoryName)</a></li>
+        }
+        else
+        {
+                <li><a href="@Url.Action("Products", "Home", new {id = categ.Id})">@Html.DisplayFor(modelitem => categ.CategoryName)</a></li>
+
+        }
+    }
+}
+}

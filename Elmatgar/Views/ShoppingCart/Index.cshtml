@@ -1,0 +1,58 @@
+﻿@*@model Elmatgar.Core.Models.OrderDetails
+
+@helper CartLoad()
+{
+
+    <script>
+       
+        function create(param) {
+            var s = "";
+            for (var i = 0; i < param; i++) {
+                s += '<input type="text" name="Fname">'; //Create one textbox as HTML
+            }
+            document.getElementById("screens").innerHTML = s;
+        }
+
+        function loadcart() {
+            var allJson = {};
+            var s = "";
+            for (var i = 0; i < window.localStorage.length; i++)
+            {
+                
+                var dataJson = {};
+              
+                var  id = window.localStorage.key(i);
+                var qtyt = localStorage.getItem(id);
+                dataJson = { "id": id, "qty": qtyt };
+                allJson+={i:dataJson};
+                var myJsonString = JSON.stringify(allJson);
+ 
+                alert(myJsonString.length);
+              
+                s += '<label for="productid">productid:</label>' + '<input type="text" name="productid'+id + '"  value=' + id + '>';
+                s += ' <label for="qty">qty:</label>' + '<input type="text" name="qty'+id +'"  value=' + qtyt + '>';
+                s += '<br\>';
+            }
+
+            document.getElementById("screen").innerHTML = s;
+           
+           
+                 
+        }
+       
+        window.addEventListener("load", loadcart, false);
+    </script>
+ 
+
+}
+@using (Html.BeginForm())
+{
+  
+    
+    <div id="screen" class="screen"></div>
+ 
+        <input type="submit" name="submit" />
+        }
+
+
+        @CartLoad()*@

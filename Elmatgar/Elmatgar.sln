@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmatgar", "Elmatgar\Elmatgar.csproj", "{1240F2A5-8838-48F6-89BF-9D17A521B3C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmatgar1.tests", "Elmatgar1.tests\Elmatgar1.tests.csproj", "{7871922C-1CDD-456B-9E47-A65D934DDD6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmatgar.Model", "Elmatgar.Model\Elmatgar.Model.csproj", "{73042B21-A126-4F27-A371-3D2BC0A76AA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmatger.Data", "Elmatger.Data\Elmatger.Data.csproj", "{4B11A67B-9CFC-4A49-BC3F-0F0863669686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmatger.Service", "Elmatger.Service\Elmatger.Service.csproj", "{A777E2E5-5B05-43DB-BCEF-9CAB8E4BBB12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1240F2A5-8838-48F6-89BF-9D17A521B3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1240F2A5-8838-48F6-89BF-9D17A521B3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1240F2A5-8838-48F6-89BF-9D17A521B3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1240F2A5-8838-48F6-89BF-9D17A521B3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7871922C-1CDD-456B-9E47-A65D934DDD6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7871922C-1CDD-456B-9E47-A65D934DDD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7871922C-1CDD-456B-9E47-A65D934DDD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7871922C-1CDD-456B-9E47-A65D934DDD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73042B21-A126-4F27-A371-3D2BC0A76AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73042B21-A126-4F27-A371-3D2BC0A76AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73042B21-A126-4F27-A371-3D2BC0A76AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73042B21-A126-4F27-A371-3D2BC0A76AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B11A67B-9CFC-4A49-BC3F-0F0863669686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B11A67B-9CFC-4A49-BC3F-0F0863669686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B11A67B-9CFC-4A49-BC3F-0F0863669686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B11A67B-9CFC-4A49-BC3F-0F0863669686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A777E2E5-5B05-43DB-BCEF-9CAB8E4BBB12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A777E2E5-5B05-43DB-BCEF-9CAB8E4BBB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A777E2E5-5B05-43DB-BCEF-9CAB8E4BBB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A777E2E5-5B05-43DB-BCEF-9CAB8E4BBB12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://amirasadek.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Elmatgar.Model\\Elmatgar.Model.csproj
+		SccProjectName1 = Elmatgar.Model
+		SccLocalPath1 = Elmatgar.Model
+		SccProjectUniqueName2 = Elmatgar1.tests\\Elmatgar1.tests.csproj
+		SccProjectName2 = Elmatgar1.tests
+		SccLocalPath2 = Elmatgar1.tests
+		SccProjectUniqueName3 = Elmatgar\\Elmatgar.csproj
+		SccProjectName3 = Elmatgar
+		SccLocalPath3 = Elmatgar
+		SccProjectUniqueName4 = Elmatger.Data\\Elmatger.Data.csproj
+		SccProjectName4 = Elmatger.Data
+		SccLocalPath4 = Elmatger.Data
+		SccProjectUniqueName5 = Elmatger.Service\\Elmatger.Service.csproj
+		SccProjectName5 = Elmatger.Service
+		SccLocalPath5 = Elmatger.Service
+	EndGlobalSection
+EndGlobal

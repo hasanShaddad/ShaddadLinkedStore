@@ -1,0 +1,31 @@
+﻿@model List<Elmatgar.Core.Models.Brands>
+
+
+
+
+<div class="brands_products">
+    <!--brands_products-->
+    <h2>Brands</h2>
+    <div class="brands-name">
+        <ul class="nav nav-pills nav-stacked">
+            @{HttpCookie lngCookie = HttpContext.Current.Request.Cookies["language"];}
+
+
+            @foreach (var item in Model)
+            {
+                if (lngCookie != null && lngCookie.Value == "ar-SA")
+                 {
+                     <li><a  href="@Url.Action("Products","Home",new {brand=item.Id})"> <span class="pull-right">( @item.Products.Count )</span>@Html.DisplayFor(model => item.SLBrandName)</a></li>
+                }
+                else
+                {
+
+                    <li><a href="@Url.Action("Products","Home",new {brand=item.Id})"> <span class="pull-right">( @item.Products.Count )</span>@Html.DisplayFor(model => item.BrandName)</a></li>
+                }
+
+            }
+
+        </ul>
+    </div>
+</div><!--/brands_products-->
+ 

@@ -1,0 +1,115 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "users";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+ 
+
+<h2> @ViewBag.Title </h2>
+ 
+<table class="table table-bordered">
+    <tr>
+        <td>
+            @using (Html.BeginForm("Index", "ApplicationUsers", FormMethod.Get, new { @class = "form-inline" }))
+            {
+                @Html.Label("search", "", new { @class = "control-label", @style = "padding-right: 5px;" })
+                @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control", @style = "min-width: 450px;", placeholder = "Search By: First Name / Last Name / Email" })
+                <input type="submit" value="Search" class="btn btn-warning" />
+            }
+        </td>
+    </tr>
+</table>
+<div id="tableId">
+    <table class="table table-striped">
+        <tr>
+            <th style="text-align: center; vertical-align: middle">
+
+                @Ajax.ActionLink("First Name", "Index", "ApplicationUsers", new { sort = ViewBag.FNameSort, search = ViewBag.CurrentSearch },
+                    new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+            </th>
+            <th style="text-align: center; vertical-align: middle">
+                @Html.ActionLink("Last Name", "Index", new { sort = ViewBag.LNameSort, search = ViewBag.CurrentSearch })
+            </th>
+            <th style="width: 75px; text-align: center; vertical-align: middle">
+                is customer
+            </th>
+            <th style="text-align: center; vertical-align: middle; width: 100px;">
+                Email
+            </th>
+            <th style="width: 75px; text-align: center; vertical-align: middle">
+                Email Confirmed
+            </th>
+            <th style="text-align: center; vertical-align: middle; width: 100px;">
+                Phone Number
+            </th>
+            <th style="width: 100px; text-align: center; vertical-align: middle">
+                @Ajax.ActionLink("Creation Date", "Index", "ApplicationUsers", new { sort = ViewBag.CDate, search = ViewBag.CurrentSearch },
+                    new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+            </th>
+            <th style="width: 100px; text-align: center; vertical-align: middle">
+                @Ajax.ActionLink("Last Update Date", "Index", "ApplicationUsers", new { sort = ViewBag.LDate, search = ViewBag.CurrentSearch },
+                    new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td style="vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.LasttName)
+                </td>
+                <td style="text-align: center; vertical-align: middle">
+                    @Html.DisplayFor(modelItem => item.IsCustomer)
+                </td>
+                <td style="vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td style="text-align: center; vertical-align: middle">
+                    @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                </td>
+                <td style="vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td style="text-align: center; vertical-align: middle">
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td style="text-align: center; vertical-align: middle">
+                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
+                </td>
+                <td style="text-align: center; vertical-align: middle">
+                    <a href="@Url.Action("Edit", "ApplicationUsers",  new { id = item.Id })"><i style="color: black; font-size: medium" class="glyphicon glyphicon-edit"></i></a>
+
+                    <a href="@Url.Action("LockAccount", "ApplicationUsers",  new { id = item.Id })"><i style="color: black; font-size: medium" class="glyphicon glyphicon-lock"></i></a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))
+<script>
+    $(function () {
+        $('form').submit(function () {
+            if ($(this).valid()) {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        $('#result').html(result);
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>

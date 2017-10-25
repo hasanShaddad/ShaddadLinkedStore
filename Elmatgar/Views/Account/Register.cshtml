@@ -1,0 +1,165 @@
+﻿@model Elmatgar.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    @*/*Users extra columns */*@
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+    </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LasttName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.LasttName, new { @class = "form-control" })
+            </div>
+        </div>
+        @*/*Users extra columns for customers*/*@
+        <div class="form-group">
+            @Html.LabelFor(m => m.CMobile, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.CMobile, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.CHomePhone, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.CHomePhone, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.CWorkPhone, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.CWorkPhone, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CCountryId, "CCountryId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CCountryId", null, "Select Country",  new { @class = "form-control", @onchange = "FillCity()" })
+                @Html.ValidationMessageFor(model => model.CCountryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CCityId, new {@class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.CCityId,
+                new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "CtCityName"),
+                "Select city",
+                new {@class = "form-control", @onchange = "FillArea()"})
+            @Html.ValidationMessageFor(m => m.CCityId, "", new {@class = "text-danger"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CAreaId, new {@class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.CAreaId,
+                new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "AAreaName"),
+                "Select Area",
+                new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.CAreaId, "", new {@class = "text-danger"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CAddress, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.CAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.CAddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
+        </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    function FillCity() {
+    var countryId = $('#CCountryId').val();
+
+    $.ajax({
+        type: "GET",
+        dataType: 'json',
+        url: '/DropList/FillCity',
+        data: { State: countryId },
+        contentType: 'application/json; charset=utf-8',
+        success: function (cities) {
+       
+        $("#CCityId").html(""); // clear before appending new list
+        var tst = "";//var to check if there is no elements in cities
+            $.each(cities, function (i, city) {
+                $("#CCityId").append(
+                    $('<option></option>').val(city.Id).html(city.CtCityName));
+                if (city.CtCityName === "nothing to select") {
+                    tst = "nothing";
+                }
+            });
+            if (tst !== "nothing") {
+                FillArea();//fill areas with elements
+            }else
+               
+            $("#CAreaId").html("");//clear areas options
+            $("#CAreaId").append(
+                       $('<option></option>').val(1).html("nothing to select"));
+        }
+    });
+    }
+
+
+    function FillArea() {
+
+        var cCityId = $('#CCityId').val();
+     
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            url: '/DropList/FillArea',
+            data: { state: cCityId },
+            contentType: 'application/json; charset=utf-8',
+            success: function (areas) {
+
+                $("#CAreaId").html(""); // clear before appending new list
+                $.each(areas, function (i, area) {
+                    $("#CAreaId").append(
+                        $('<option></option>').val(area.Id).html(area.AAreaName));
+                });
+            }
+        });
+    }
+</script>
+} 

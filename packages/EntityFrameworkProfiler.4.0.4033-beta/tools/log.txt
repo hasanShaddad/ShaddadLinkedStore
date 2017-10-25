@@ -1,0 +1,2 @@
+2017-01-30 22:57:17,325 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 4033
+2017-01-30 22:57:26,749 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Could not find license file: C:\Users\hassan\AppData\Local\EntityFramework Profiler\license.xml

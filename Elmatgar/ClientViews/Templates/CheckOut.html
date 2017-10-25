@@ -1,0 +1,121 @@
+﻿<!--ng-class="{ 'has-error' : CheckOut.$invalid  }"-->
+<div class="col-sm-9 padding-right"  >
+    <form name="CheckOut" novalidate>
+
+        <div class="form-horizontal">
+            <h4>Order</h4>
+            <p>{{CheckOut.$invalid}}</p>
+
+            <div class="form-group" ng-class="{ 'has-error' : CheckOut.Country.$invalid }">
+                <h3>Country * </h3>
+                <div class="col-md-10">
+                    <label for="CountryId"></label>
+                    <select id="CountryId" name="Country"
+                            class="form-control"
+                            ng-model="Checkvm.Country"
+                            ng-options="item.CnCountryName for item in Checkvm.Countries track by item.Id"
+                            ng-change="Checkvm.GetCities()" required></select>
+                    <p ng-show="CheckOut.Country.$invalid " class="help-block">Country is required.</p>
+                    <p>{{CheckOut.Country.$invalid}}</p>
+
+                    <p>{{CheckOut.Country.$error.required}}</p>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : CheckOut.City.$invalid  }">
+            <h3>City * </h3>
+            <div class="col-md-10">
+                <label for="CityId"></label>
+                <select id="CityId"
+                        class="form-control"
+                        ng-model="Checkvm.City"
+                        name="City"
+                        ng-options="item.CtCityName for item in Checkvm.Cities track by item.Id"
+                        ng-change="Checkvm.GetArea()" required></select>
+                <p ng-show="CheckOut.City.$invalid " class="help-block">City is required.</p>
+
+
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : CheckOut.Area.$invalid  }">
+            <h3>Area *</h3>
+            <div class="col-md-10">
+                <label for="AreaId"></label>
+                <select id="AreaId"
+                        name="Area"
+                        class="form-control"
+                        ng-model="Checkvm.Area"
+                        ng-options="item.AAreaName for item in Checkvm.Areas track by item.Id" required></select>
+                <p ng-show="CheckOut.Area.$invalid " class="help-block">Area is required.</p>
+
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : CheckOut.Adress.$invalid }">
+            <h3>Address *</h3>
+            <div class="col-md-10">
+                <label id="Address"></label>
+                <input id="Address" name="Adress" class="form-control" ng-model="Checkvm.CheckData.Orders.CAddress" required />
+                <p ng-show="CheckOut.Adress.$invalid " class="help-block">Adress is required.</p>
+
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : CheckOut.ZipCode.$invalid  || CheckOut.ZipCode.$error.maxlength || CheckOut.ZipCode.$error.minlength   }">
+            <h3>ZipCode *</h3>
+
+            <div class="col-md-10">
+                <label id="ZipCode"></label>
+                <input id="ZipCode" name="ZipCode" type="number" class="form-control" ng-model="Checkvm.CheckData.Orders.ZipCode" required ng-minlength="4" ng-maxlength="4" />
+                <p ng-show="CheckOut.ZipCode.$error.minlength" class="help-block">ZipCode is too short.</p>
+                <p ng-show="CheckOut.ZipCode.$error.maxlength" class="help-block">ZipCode is too long.</p>
+                <p ng-show="CheckOut.ZipCode.$invalid " class="help-block">ZipCode is required.</p>
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : CheckOut.Payment.$invalid  }">
+            <h3>Payment Type *</h3>
+            <div class="col-md-10">
+                <label for="PaymentId"></label>
+                <select id="PaymentId"
+                        class="form-control"
+                        name="Payment"
+                        ng-model="Checkvm.CheckData.Orders.PaymentType"
+                        ng-options="x for x in  Checkvm.PaymentTypes" required></select>
+                <p ng-show="CheckOut.Payment.$invalid " class="help-block">Payment is required.</p>
+
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : CheckOut.DeliveryOptions.$invalid  }">
+            <h3>Delivery Options *</h3>
+            <div class="col-md-10">
+                <label for="DeliveryOptionsId"></label>
+                <select id="DeliveryOptionsId"
+                        class="form-control"
+                        name="DeliveryOptions"
+                        ng-model="Checkvm.CheckData.Orders.DeliveryOption"
+                        ng-options="x for x in  Checkvm.DeliveryOptions" required></select>
+                <p ng-show="CheckOut.DeliveryOptions.$invalid " class="help-block">DeliveryOptions is required.</p>
+                <p>{{CheckOut.DeliveryOptions.$invalid }}</p>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit"
+                        class="btn btn-sm btn-primary"
+                        ng-click="Checkvm.CheckOutClick()"
+                        ng-disabled="CheckOut.$invalid">
+                    <i class="glyphicon glyphicon-save"></i>
+                    &nbsp;Save
+
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+

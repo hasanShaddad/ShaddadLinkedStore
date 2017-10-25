@@ -1,0 +1,188 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.SupplierStores>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<div align="right">
+    <text> Search By :  </text>
+    <span><input type="radio" id="StoreName" title="Store name"  /> Store name </span>
+    <span><input type="radio" id="SupllierName" title="Supplier name" /> Supplier name </span>
+    <span> <input type="radio" id="AreaName" title="Area name" /> Area </span>
+    
+  
+</div>
+<div class="searchform " align="right">
+    @using (Html.BeginForm("Index", "SupplierStores", FormMethod.Get, new { @class = "form-inline" }))
+    {
+
+        <input type="hidden" id="searchtype" name="SearchBy" value=''/>
+ 
+        @*@Html.Label("search", "Supplier Name ", new { @class = "control-label" })*@
+        @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control" })
+        <input type="submit" value="search" class="btn btn-default" />
+    }
+</div>
+<h2>List of Supplier Stores </h2>
+
+<p>
+
+    <a href="@Url.Action("Create", "SupplierStores")" class="btn btn-primary ">
+        <i class="glyphicon glyphicon-plus"> Create </i>
+    </a>
+
+</p>
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Ajax.ActionLink("Store Name", "Index", "SupplierStores", new { sort = ViewBag.SupplierStoreNameSort, search = ViewBag.CurrentSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+
+
+
+
+        </th>
+        <th>
+            @Html.ActionLink("Supplier Name", "Index", new { sort = ViewBag.SupplierNameSort, search = ViewBag.CurrentSearch })
+
+        </th>
+
+        <th>
+            @Html.ActionLink("Area", "Index", new { sort = ViewBag.AreaNameSort, search = ViewBag.CurrentSearch })
+        </th>
+        <th>
+            City
+
+        </th>
+        <th>
+            Country
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.SsLang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SsLong)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdatedBy)
+            </th>*@
+        <th>
+            <a href="@Url.Action("DeletedStoresIndex", "SupplierStores")" class="btn btn-warning">
+                <i class="glyphicon glyphicon-remove"> Show Deleted Suppliers</i>
+            </a>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zones.AAreaName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cities.CtCityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Countries.CnCountryName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.SsLang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SsLong)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+                </td>*@
+            <td>
+                <a href="@Url.Action("Edit", "SupplierStores", new {id = item.Id})" class="btn btn-default">
+                    <i class="glyphicon glyphicon-edit" title="Edite Supplier Data"> </i>
+                </a>
+                <a href="@Url.Action("Details", "SupplierStores", new {id = item.Id})" class="btn btn-info">
+                    <i class="glyphicon glyphicon-info-sign" title="Show Supplier Data"> </i>
+                </a>
+                <a href="@Url.Action("Delete", "SupplierStores", new {id = item.Id})" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-remove" title="Delite Supplier"></i>
+                </a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))
+
+
+@*// removing lang attribute
+    edited by eman herawy
+*@
+@section scripts
+{
+    <script>
+        $(document)
+            .ready(function() {
+       
+                $("#AreaName")
+                    .click(function() {
+                    
+                       //$("#SearchBy").val("AreaSearch");
+                        document.getElementById("searchtype").value = "AreaSearch";
+                        $("#StoreName").prop('checked', false);
+                        $("#SupllierName").prop('checked', false);
+                       
+                    });
+
+                $("#StoreName")
+                    .click(function() {
+                        document.getElementById("searchtype").value = "StoreSearch";
+                       //$("#SearchBy").val("StoreSearch");
+                      
+                        $("#SupllierName").prop('checked', false);
+                        $("#AreaName").prop('checked', false);
+                     
+                    });
+
+
+                $("#SupllierName")
+                    .click(function () {
+                       //$("#SearchBy").val("SupplierSearch");
+                        document.getElementById("searchtype").value = "SupplierSearch";
+                        $("#StoreName").prop('checked', false);
+                        $("#AreaName").prop('checked', false);
+                        
+
+                    });
+            });
+    </script>
+}

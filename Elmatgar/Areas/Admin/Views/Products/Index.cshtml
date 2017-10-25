@@ -1,0 +1,133 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.Products>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Products")" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Create New</a>
+ 
+   
+</p>
+
+@using (Html.BeginForm("Index", "Products", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.Label("search", "product name ", new { @class = "control-label" })
+    @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control" })
+    <input type="submit" value="search" class="btn btn-default" />
+}
+
+
+
+
+<table class="table table-striped table-responsive">
+    <tr>
+        <th>
+            Brand Name
+        </th>
+        <th>
+            CategoryName
+        </th>
+        <th>
+            KitName
+        </th>
+        <th>
+            @Ajax.ActionLink("product Name", "Index", "Products", new { sort = ViewBag.ProductNameSort, search = ViewBag.CurrentSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+
+
+        </th>
+        <th>
+            KitFlag
+        </th>
+        <th>
+            ActiveFlag
+        </th>
+        <th>
+            @Html.ActionLink("Creation Date", "Index", new { sort = ViewBag.CDate, search = ViewBag.CurrentSearch })
+        </th>
+        <th>
+            LastUpdate 
+        </th>
+        <th>
+            CreatedBy
+        </th>
+        <th>
+            UpdatedBy
+        </th>
+        <th>admin Actions   </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brands.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KitProducts.KitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KitFlag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActiveFlag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+
+            </td>
+
+            <td>
+                <div class="btn-group" style="display: flex;">
+                    <a href="@Url.Action("Details", "Products", new {id = item.Id})" class="btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></a>
+                    <a href="@Url.Action("Edit", "Products", new {id = item.Id})" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                    <a href="@Url.Action("Delete", "Products", new {id = item.Id})" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+           </td>
+        </tr>
+    }
+
+</table>
+
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))
+
+
+<script>
+    $(function () {
+        $('form').submit(function () {
+            if ($(this).valid()) {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        $('#result').html(result);
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>

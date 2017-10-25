@@ -1,0 +1,26 @@
+﻿
+@using Action = Antlr.Runtime.Misc.Action
+@model IEnumerable<Elmatgar.Core.Models.Orders> 
+
+@foreach (var orderItem in Model)
+
+{
+    foreach (var item in orderItem.OrderDetails)
+    {
+        <img src="~/@Html.DisplayFor(modelItem => item.Products.ProductImages.FirstOrDefault().ImageLink)/@Html.DisplayFor(modelItem => item.Products.ProductImages.FirstOrDefault().ImageName)" style="width:50px" />
+        <p>quty is :@Html.DisplayFor(modelItem => item.OrderQuantity) for product :@Html.DisplayFor(modelItem => item.Products.Name)</p>   <br />
+
+
+    }
+
+}
+<h3>please compleate your order information</h3>
+@*<input type="button" value="promote" id="clearCart" />*@
+ 
+
+    @*@Html.DisplayFor(modelItem => item.OrderId)*@
+    @*@Html.ActionLink("ShopCart", "CartPaied", "ShopCart", new { id = "clearme" }, new { @class = "btn btn-success btn-xs", id = "clearme" })*@
+@{Html.RenderAction("Edit", "Order");}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

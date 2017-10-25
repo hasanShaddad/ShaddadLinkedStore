@@ -1,0 +1,116 @@
+﻿@model Elmatgar.Core.Models.SupplierStores
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplier Stores Information </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.Cities.CtCityName)
+        </dt >
+
+        <dd>
+            @Html.DisplayFor(model => model.Cities.CtCityName)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.Countries.CnCountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Countries.CnCountryName)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suppliers.SupplierName)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.Zones.AAreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zones.AAreaName)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.StoreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreName)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.SsLang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SsLang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SsLong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SsLong)
+        </dd>*@
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdateDate)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+ 
+<p>
+    <a href="@Url.Action("Index", "SupplierStores")" class="btn btn-primary">
+        <i class="glyphicon glyphicon-arrow-left">  </i> Back to List
+    </a>
+    <a href="@Url.Action("Edit", "SupplierStores", new {id = Model.Id})" class="btn btn-default">
+        <i class="glyphicon glyphicon-edit">  Edite  </i>
+    </a>
+
+</p>
+@*// removing lang attribute
+    edited by eman herawy
+*@

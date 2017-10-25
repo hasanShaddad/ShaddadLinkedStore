@@ -1,0 +1,163 @@
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Repositories\IDataRepository.cs
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Repositories\IDataRepository.cs
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.dll.config
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.Helpers.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Service\bin\Debug\System.Web.Helpers.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Repositories\IDataRepository.cs
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.dll.config
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.Helpers.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.Helpers.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatger.Service\obj\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Service.dll.config
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Service.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Helpers.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Helpers.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\obj\Debug\Elmatgar.Service.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\obj\Debug\Elmatgar.Service.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatger.Service\obj\Debug\Elmatgar.Service.pdb
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Repositories\IAuditInfo.cs
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Service.dll.config
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Service.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Service.pdb
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Core.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.persistence.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Helpers.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Mvc.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Razor.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.Core.pdb
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Elmatgar.persistence.pdb
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Helpers.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Mvc.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.Razor.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\obj\Debug\Elmatgar.Service.csprojResolveAssemblyReference.cache
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\obj\Debug\Elmatgar.Service.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatger.Service\obj\Debug\Elmatgar.Service.pdb

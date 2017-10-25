@@ -1,0 +1,128 @@
+﻿
+ 
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.ProductImages>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@using (Html.BeginForm("Index", "ProductImages", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.Label("search", "first name ", new { @class = "control-label" })
+    @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control" })
+    <input type="submit" value="search" class="btn btn-default" />
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Products Name 
+        </th>
+        <th>
+            @Ajax.ActionLink("Image Name", "Index", "ProductImages", new { sort = ViewBag.ImageNameSort, search = ViewBag.CurrentSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+
+
+        </th>
+        <th>
+            Image Link 
+        </th>
+        <th>
+           Active Flag 
+        </th>
+        <th>
+            @Html.ActionLink("Creation Date", "Index", new { sort = ViewBag.CDate, search = ViewBag.CurrentSearch })
+
+
+        </th>
+        <th>
+            Last Update Date
+        </th>
+        <th>
+           Created By
+        </th>
+        <th>
+         Last Updated By 
+        </th> 
+        <th>
+            state 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActiveFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+        </td>
+        <td>
+           @{
+               if (item.ImageExist==false)
+               {
+                   <span style="color: red">NO image exist</span>
+
+               }
+               else {  <span style="color: green">image exist</span> }
+        } 
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+
+            @(item.ImageExist == true ? Html.ActionLink("update image", "Details", new {id = item.Id}) : Html.ActionLink("Upload image", "Details", new {id = item.Id}))
+
+            |
+     @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))
+<script>
+$(function () {
+    $('form').submit(function () {
+        if ($(this).valid()) {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    $('#result').html(result);
+                }
+            });
+        }
+        return false;
+    });
+});
+</script>

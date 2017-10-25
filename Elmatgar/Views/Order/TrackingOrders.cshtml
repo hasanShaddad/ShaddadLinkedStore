@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Elmatgar.Core.Models.Orders>
+@{
+    ViewBag.Title = "TrackingOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tracking Your Orders</h2>
+<div class="col-sm-9  text-center">
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryOption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimatedDeliveryTime)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Dleivery.Name)
+                </th>*@
+            @*<th></th>*@
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeliveryOption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.PaymentType)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstimatedDeliveryTime)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.DeliveryId)
+                    </td>*@
+                @*<td>@Html.DisplayFor(modelItem => item.LastUpdatedBy)</td>*@
+            </tr>
+        }
+
+    </table>
+</div>

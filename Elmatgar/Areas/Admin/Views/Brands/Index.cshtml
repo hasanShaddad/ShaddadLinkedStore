@@ -1,0 +1,95 @@
+﻿@using System.Data.SqlClient
+@model IEnumerable<Elmatgar.Core.Models.Brands>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+
+<h2><img src="~/Images/Brands.jpg" width="90px" height="80px" alt="IMAGES" /></h2>
+
+
+
+<p>
+
+
+
+    <a href="@Url.Action("Create", "Brands")" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Create New</a>
+</p>
+
+<div style="margin:5px">
+    
+    @using (Html.BeginForm())
+    {
+        <b>Search:</b>  @Html.TextBox("search")
+    }
+</div>
+
+<table class="table table-striped table-responsive">
+    <tr>
+        <th>
+            @Html.ActionLink("Brand Name", "Index", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "BrandName" })
+        </th>
+        <th>
+
+            @Html.ActionLink("CreationDate", "Index", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "CreationDate" })
+
+        </th>
+        <th>
+
+
+            @Html.ActionLink("LastUpdateDate", "Index", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "LastUpdateDate" })
+
+        </th>
+        <th>
+
+            @Html.ActionLink("CreatedBy", "Index", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "CreatedBy" })
+
+
+        </th>
+        <th>
+
+
+            @Html.ActionLink("LastUpdatedBy", "Index", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "LastUpdatedBy" })
+
+
+
+        </th>
+        <th> Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+            </td>
+            <td>
+
+
+                <a href="@Url.Action("Details", "Brands",  new { id = item.Id })" class="btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></a>
+
+
+                <a href="@Url.Action("Edit", "Brands",  new { id = item.Id })" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+
+
+                <a href="@Url.Action("Delete", "Brands",  new { id = item.Id })" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>

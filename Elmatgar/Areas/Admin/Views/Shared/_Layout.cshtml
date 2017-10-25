@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | LD-Stores</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+
+
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/css/price-range.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="~/Content/rating.css" rel="stylesheet" />
+    <link href="~/Content/css/devLinkMenue.css" rel="stylesheet" />
+
+    <link href=@Elmatgar.Resources.Layout.Resource.Style rel="stylesheet" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+  @*todo:fix the bundle jquery have to be under body not in head*@
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+        @Styles.Render("~/Content/css")
+        <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+</head>
+<body>
+<div class="navbar  navbar-fixed-top">
+
+
+    <div class="container">
+    
+
+
+
+        <div class="navbar-collapse collapse">
+
+
+            <ul id="menu" class="nav navbar-nav ui-menu ui-widget ">
+                
+                
+             
+             <li>@Html.ActionLink(" Admin panel", "Index", "AdminHome", null, new { @class = "navbar-brand" })</li>
+
+                <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
+                <li>@Html.ActionLink("Departments", "Index", "Departments")</li>
+
+
+ 
+
+
+                <li>
+                    <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Users & roles<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-left" role="menu">
+                        <li>@Html.ActionLink("Roles", "Index", "ApplicationRoles")</li>
+                        <li>@Html.ActionLink("Users", "Index", "ApplicationUsers")</li>
+                    </ul>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Adress<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-left" role="menu">
+                        <li>@Html.ActionLink("Countries", "Index", "Countries")</li>
+                        <li>@Html.ActionLink("cities", "Index", "Cities")</li>
+                        <li>@Html.ActionLink("Zones", "Index", "Zones")</li>
+                    </ul>
+                </li>
+
+
+
+
+
+
+
+
+
+                <li>
+                    <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        products<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-left" role="menu">
+                        <li>@Html.ActionLink("Categories", "Index", "Categories", new { Area = "Admin" }, new { })</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Brands", "Index", "Brands")</li>
+                        <li>@Html.ActionLink("DiscountRules", "Index", "DiscountRules")</li>
+                        <li>@Html.ActionLink("KitProducts", "Index", "KitProducts")</li>
+                        <li>@Html.ActionLink("Product attributes", "Index", "ProductAttributes")</li>
+                        <li>@Html.ActionLink("attributes headers ", "Index", "AttributeHeaders")</li>
+
+                        <li>@Html.ActionLink("Product Barcodes", "Index", "ProductBarcodes")</li>
+                        <li>@Html.ActionLink("Product Images", "Index", "ProductImages")</li>
+                        <li>@Html.ActionLink("Product Original Prices", "Index", "ProductOriginalPrices")</li>
+
+                        <li>@Html.ActionLink("Product Promotions", "Index", "ProductPromotions")</li>
+                        <li>@Html.ActionLink("Product Votes", "Index", "ProductVotes")</li>
+                        <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                    </ul>
+                </li>
+
+
+
+
+                <li>
+                    <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Inventory<span class="caret"></span>
+                    </a>
+                    <ul>
+                        <li>@Html.ActionLink("Inventory Transaction", "Index", "InventoryTrans")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Suppliers", "Index", "Suppliers")</li>
+                        <li>@Html.ActionLink("Supplier Stores", "Index", "SupplierStores")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Supply Orders", "Index", "SupplyOrder")</li>
+                        <li>@Html.ActionLink("Supply Order Details", "Index", "SupplyOrderDetails")</li>
+                        <li>@Html.ActionLink("Supply Order Payments", "Index", "SupplyOrderPayments")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Orders notification", "Index", "OrdersAdmin")</li>
+                        <li>@Html.ActionLink("Tracking Orders", "AdminTrackingOrders", "OrdersAdmin")</li>
+
+
+                        <li>@Html.ActionLink("Order Line Trans", "Index", "OrderLineTrans")</li>
+                    </ul>
+                </li>
+                <script>
+                $("#menu").menu();
+                </script>
+
+
+            <li>@Html.Partial("_LoginPartial")</li>   
+
+            </ul>
+            @*//////////////////////////////notifecation//////////////////////////////////////*@
+            
+            
+            
+            
+            
+            @using (Ajax.BeginForm("Index", "OrdersAdmin", new AjaxOptions()
+            {
+
+            HttpMethod = "GET",
+            AllowCache = false 
+            }))
+            {
+
+            <button type="submit" style=" background-color: transparent; text-decoration: underline; border: none;" >
+                <input type="hidden" id="userListIdHidden" value="Noti" />
+
+                   <h1><i for="discussion"></i></h1> 
+                    <input type="hidden" id="message" /> <br />
+
+                    <input type="hidden" id="displayname" />
+                    <input type="hidden" id="connection" />
+
+              
+
+            </button>
+            }
+
+         
+
+            @*////////////////////////////end of//notifecation//////////////////////////////////////*@
+          
+
+            
+          
+        </div>
+    </div>
+    
+    
+ 
+    
+
+</div>
+    
+
+ 
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+   
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+        integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+        crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿ @model String
+     @{
+         ViewBag.Title = "Index";
+         Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+     }
+<h2>categories</h2>
+
+<br/>
+@Html.ActionLink("create new category","Create","Categories", new { area = "Admin" }, new {@class="btn btn-success btn-xs"})
+<div id="categories">
+    @Html.Raw(@Model)
+</div>

@@ -1,0 +1,111 @@
+﻿@using Elmatgar.Core.Models
+<!--FinalPrice helper for using in razor views to calculate the final price for product by checking if
+the product has promotion and check promotion end date then return the original price and price after promote
+    if there is no promotion then return original price only-->
+
+@helper FinalPrice(decimal? originalPrice, ProductPromotions productPromotion, DiscountRules discountRule)
+{
+int drQty = 0;
+
+//compute final price
+decimal? orPrice = originalPrice;
+
+
+if (productPromotion != null && productPromotion.EndDate >= DateTime.Now)
+{
+    orPrice = productPromotion.PromoPrice;
+}
+
+
+int? descount;
+if (discountRule != null)
+{
+    descount = (int)(discountRule.DiscountPercentage * 100);
+    drQty = discountRule.DrQty;
+}
+else
+{
+    descount = 0;
+}
+
+
+decimal? finalPrice = orPrice;
+
+if (finalPrice != null && finalPrice != originalPrice)
+{
+        <span><strike><font color="Gray">US $ @originalPrice </font></strike>  <br /> <font color="green">US $@finalPrice.Value<span class="label label-warning">Sale</span></font></span>
+
+}
+else
+{
+        <h2>$@originalPrice</h2>
+
+}
+if (drQty > 0)
+{
+        <span> <font color="Green">if you take @drQty peaces you will have @descount% Descount</font></span>
+}
+    <br />
+
+
+}
+
+
+
+
+<!-- FinalPriceVal helper for using in razor views to calculate the final price for product by checking if
+the product has promotion and check promotion end date then return   price after promote value
+    if there is no promotion then return original price value-->
+
+@helper FinalPriceVal(decimal? originalPrice, ProductPromotions productPromotion, DiscountRules discountRule, int id)
+{
+
+//compute final price
+
+
+decimal? finalPrice = 0;
+if (productPromotion != null && productPromotion.EndDate >= DateTime.Now)
+{
+    finalPrice = productPromotion.PromoPrice;
+}
+
+if (finalPrice > 0)
+{
+        @finalPrice
+}
+else
+{
+        @originalPrice
+}
+
+
+
+}
+
+
+<!-- DescountRolePrice helper for using in razor views to calculate the final price for product by checking if
+the product has DescountRole and check DescountRole end date then return   price after DescountRole value
+    if there is no promotion then return original price value-->
+
+
+@helper DescountRolePrice(decimal? finalprice, DiscountRules discountRule)
+{
+
+//compute final price
+
+
+decimal? descountRolePrice;
+if (discountRule != null && discountRule.EndDate >= DateTime.Now)
+{
+    descountRolePrice = finalprice - (discountRule.DiscountPercentage * finalprice);
+}
+else
+{
+    descountRolePrice = finalprice;
+}
+
+
+    @descountRolePrice
+
+}
+<!--made by hassan shaddad 12/2016-->

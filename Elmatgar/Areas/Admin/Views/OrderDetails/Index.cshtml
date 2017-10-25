@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Elmatgar.Core.Models.OrderDetails>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.Name)
+        </th>
+   
+        <th>
+            @Html.Label("Customer Name")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.LastUpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdatedBy)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.Name)
+            </td>
+        
+            <td>
+                @**@
+                @{ string fullname = item.Order.Customers.CFirstName + " " + item.Order.Customers.CLastName; }
+                @Html.Label(fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderQuantity)
+            </td>
+            <td>
+
+                @Ajax.ActionLink(item.OrderStatus, "Shipping", "OrderDetails", new { id = item.Id, orderid = @ViewBag.OrderId },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+                </td>*@
+            <td>
+                @Ajax.ActionLink("Cancle", "Canceling", "OrderDetails", new { id = item.Id, orderid = ViewBag.OrderId },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+
+                @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+            </td>
+        </tr>
+                    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Index" ,"OrdersAdmin")
+</div>

@@ -1,0 +1,212 @@
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Repositories\IDataRepository.cs
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.persistence.dll.config
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.Persistence.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.201610131001273_Initial.resources
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.201610251811228_UpdateModels_init.resources
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.editUsersAndCustomerHassanShaddad.resources
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.TestFirstDDD.resources
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.Persistence.csproj.GenerateResource.Cache
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Downloads\Work\LinkedDevs\store\Elmatger-8-\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Repositories\IDataRepository.cs
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.persistence.dll.config
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.Persistence.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.201610131001273_Initial.resources
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.201610251811228_UpdateModels_init.resources
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.editUsersAndCustomerHassanShaddad.resources
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.TestFirstDDD.resources
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.Persistence.csproj.GenerateResource.Cache
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedStore\Elmatger\Elmatger.Data\obj\Debug\Elmatgar.persistence.Migrations.orderedit.resources
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Repositories\IDataRepository.cs
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.dll.config
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.Persistence.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.201610131001273_Initial.resources
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.201610251811228_UpdateModels_init.resources
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.editUsersAndCustomerHassanShaddad.resources
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.TestFirstDDD.resources
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderedit.resources
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.Persistence.csproj.GenerateResource.Cache
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Documents\Visual Studio 2015\Projects\Elmatger\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Repositories\IAuditInfo.cs
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.dll.config
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Mvc.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.Core.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Mvc.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.Persistence.csprojResolveAssemblyReference.cache
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.201610131001273_Initial.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.201610251811228_UpdateModels_init.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.editUsersAndCustomerHassanShaddad.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.TestFirstDDD.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderedit.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.Persistence.csproj.GenerateResource.Cache
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.matchChanges.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.EditAttributeHeaderName.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.categoryImages.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Helpers.dll
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Helpers.xml
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.FexingRoleModles.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.aaa.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.productattrId.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.attributeConfig.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.newmigrationforattribute.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.AddingActiveFalgeToAllModels.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.secoundlanguge.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.ordersforcheck.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderdetailsCheckOut.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.editTotalDetails.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderscountry.resources
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.OrdersCaddress.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Repositories\IAuditInfo.cs
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Repositories\ITreeNodeDotNet3.cs
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.dll.config
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.persistence.pdb
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.Core.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Helpers.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Razor.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Mvc.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Elmatgar.Core.pdb
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Helpers.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Razor.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\bin\Debug\System.Web.Mvc.xml
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.Persistence.csprojResolveAssemblyReference.cache
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.201610131001273_Initial.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.201610251811228_UpdateModels_init.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.editUsersAndCustomerHassanShaddad.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.TestFirstDDD.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderedit.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.matchChanges.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.EditAttributeHeaderName.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.categoryImages.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.FexingRoleModles.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.aaa.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.productattrId.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.attributeConfig.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.newmigrationforattribute.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.AddingActiveFalgeToAllModels.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.secoundlanguge.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.ordersforcheck.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderdetailsCheckOut.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.editTotalDetails.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.orderscountry.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.OrdersCaddress.resources
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.Persistence.csproj.GenerateResource.Cache
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.dll
+D:\Work\Projects\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.pdb
+C:\Users\hassan\Source\Workspaces\LinkedDevsEStore\Elmatgar.Persistence\obj\Debug\Elmatgar.persistence.Migrations.supplierOrdersDateNotReq.resources

@@ -1,0 +1,128 @@
+﻿@model Elmatgar.Core.Models.InventoryTrans
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InventoryTrans</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDetails.OrderStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDetails.OrderStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Products.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Products.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplyOrderDetails.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplyOrderDetails.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suppliers.SupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierStores.StoreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierStores.StoreName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItTransDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItTransDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItTransType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItTransType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItTransAmt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItTransAmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <a href="@Url.Action("Index", "InventoryTrans")" class="btn btn-primary">
+        <i class="glyphicon glyphicon-arrow-left">  </i> Back to List
+    </a>
+    <a href="@Url.Action("Edit", "InventoryTrans", new {id = Model.Id})" class="btn btn-default">
+        <i class="glyphicon glyphicon-edit">  Edite  </i>
+    </a>
+</p>

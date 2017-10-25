@@ -1,0 +1,129 @@
+﻿@model Elmatgar.ViewModels.CheckOutViewModel
+
+
+<h2>ONLINE PAID Index</h2>
+
+
+<div class="col-sm-9 padding-right">
+    <label id="validationEmpty" class = "text-danger"></label><br/>
+    <label id="validationError" class="text-danger"></label>
+
+    @using (Html.BeginForm("Process", "OnlinePaid", FormMethod.Post, new {id = "myCCForm"}))
+    {
+
+
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        @Html.HiddenFor(model => model.Id)
+
+        <input id="token" name="token" type="hidden" value="">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Total, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Total, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Total, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ccNo, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ccNo, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.ccNo, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.expMonth, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.expMonth, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.expMonth, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.expYear, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.expYear, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.expYear, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cvv, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.cvv, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.cvv, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <br/>
+        <input type="submit" value="Submit Payment" class="btn btn-default"/>
+
+    }
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+
+<script>
+    // Called when token created successfully.
+    var successCallback = function (data) {
+        alert("successCallback");//ggggggggggggggggggggggggggggggggggggggg
+        var myForm = document.getElementById('myCCForm');
+
+        // Set the token as the value for the token input
+        myForm.token.value = data.response.token.token;
+
+        // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
+        myForm.submit();
+    };
+
+    // Called when token creation fails.
+    var errorCallback = function (data) {
+        if (data.errorCode === 200) {
+            tokenRequest();
+        } else {
+            
+            
+            if (data.errorMsg === "Missing Card Data") {
+                $("#validationEmpty").text("please fill all fields with  valid data");
+                
+            } else {
+                $("#validationError").text("please insert valid data");
+                
+            }
+
+        }
+    };
+
+    var tokenRequest = function () {
+        $("#validationEmpty").text("");
+        $("#validationError").text("");
+        // Setup token request arguments
+        var args = {
+            sellerId: "103107139",
+            publishableKey: "32AF9F22-14A8-4682-85B7-224178966086",
+            ccNo: $("#ccNo").val(),
+            cvv: $("#cvv").val(),
+            expMonth: $("#expMonth").val(),
+            expYear: $("#expYear").val()
+        };
+
+        // Make the token request
+        window.TCO.loadPubKey('Sandbox',
+            function () {
+                window.TCO.requestToken(successCallback, errorCallback, args);
+            });
+    };
+
+
+
+
+    $("#myCCForm").submit(function (e) {
+      
+        // Call our token request function
+        tokenRequest();
+
+        // Prevent form from submitting
+        return false;
+    });
+
+</script>

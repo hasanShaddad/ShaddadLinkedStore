@@ -1,0 +1,42 @@
+﻿@model Elmatgar.ViewModels.SuplyOrderViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Supply Order </h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.SupplierId, "Supplier Name", new {@class = "control-label col-md-2"})
+        @Html.DropDownListFor(m => m.SupplierId, new SelectList(Model.Suppliers, "Id", "SupplierName"))
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OrderDate, new {@class = "control-label col-md-2"})
+        @Html.EditorFor(model => model.OrderDate, "DateWithPicker")
+
+    </div>
+    <div class="form-group"></div>
+    @Html.LabelFor(m => m.ProductId, "Product Name", new {@class = "control-label col-md-2"})
+    @Html.DropDownListFor(m => m.ProductId, new SelectList(Model.Products, "Id", "Name"))
+    <div class="form-group"></div>
+    @Html.LabelFor(m => m.Quntity, new {@class = "control-label col-md-2"})
+    @Html.EditorFor(model => model.Quntity, new {@class = "control-label col-md-2"})
+    <div class="form-group">
+        @Html.LabelFor(model => model.Paid, htmlAttributes: new {@class = "control-label col-md-2"})
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Paid)
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <a href="@Url.Action("Index", "SupplyOrder")" class="btn btn-primary">
+            <div class="glyphicon glyphicon-arrow-left">  </div> Back to List
+        </a>
+        <input type="submit" value="Create" class="btn btn-success" />
+    </div>
+}

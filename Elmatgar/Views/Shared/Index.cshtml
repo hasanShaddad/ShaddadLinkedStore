@@ -1,0 +1,87 @@
+﻿@using Elmatgar.Core.Models
+@model IEnumerable<Elmatgar.Core.Models.Categories >
+
+<nav id="primary_nav_wrap">
+    <ul>
+        <li>
+            <a href="#">@Elmatgar.Resources.Layout.Resource.OurProducts</a>
+
+            <ul>
+@foreach (var item in Model)
+{
+    @GetMenue(item)
+}
+
+            </ul>
+        </li>
+    </ul>
+</nav>
+@helper GetMenue(Categories categ)
+{
+
+    <li class="dir">
+        @if (categ.Parent == null)
+        {
+            <a href="#">@Html.DisplayFor(modelitem => categ.CategoryName)</a>
+
+
+
+            if (categ.Children.Count > 0) //2
+            {
+                <ul>
+
+                    @foreach (Categories subItem in categ.Children)
+                    {
+
+                        if (subItem.Children.Count > 0)
+                        {
+
+                            @GetMenue(subItem)
+                        }
+                        else if (subItem.Children.Count == 0)
+                        {
+                            //if item.parent=item && cheldren==0
+                            <li class="dir"><a href="@Url.Action("Products","Home",new {id=subItem.Id})">@Html.DisplayFor(modelitem => subItem.CategoryName)</a></li>
+                        }
+                    }
+
+
+                </ul>
+            }
+
+
+        }
+        else
+        {
+            if (categ.Children.Count > 0) //2
+            {
+                <a href="#">@Html.DisplayFor(modelitem => categ.CategoryName)</a>
+                <ul>
+
+                    @foreach (Categories subItem in categ.Children)
+                    {
+
+                        if (subItem.Children.Count > 0)
+                        {
+
+                            @GetMenue(subItem) 
+                        }
+                        else if (subItem.Children.Count == 0)
+                        {
+                            //if item.parent=item && cheldren==0
+                            <li class="dir"><a href="@Url.Action("Products","Home",new {id=subItem.Id})">@Html.DisplayFor(modelitem => subItem.CategoryName)</a></li>
+                        }
+                    }
+
+
+                </ul>
+            }
+            else
+            {
+            <li class="dir"><a href="@Url.Action("Products","Home",new {id=categ.Id})">@Html.DisplayFor(modelitem => categ.CategoryName)</a></li>
+            }
+        }
+    </li>
+
+
+}

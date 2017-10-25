@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Elmatgar.Core.Models.SupplyOrders>
+
+@{
+    ViewBag.Title = "DeletedOrderIndex";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deleted Supply Order Index</h2>
+<br />
+<br />
+<br />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </th>*@
+        <th>
+           
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+            </td>*@
+            <td>
+               @using (Html.BeginForm("Unlock", "SupplyOrder", new { id = item.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+               { @Html.AntiForgeryToken()
+                   <input type="submit" value="Restore" class="btn btn-info glyphicon glyphicon-lock"/>
+               }
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="form-actions no-color">
+    <a href="@Url.Action("Index", "SupplyOrder")" class="btn btn-primary">
+        <div class="glyphicon glyphicon-arrow-left">  </div> Back to  Index List
+    </a>
+
+</div>
+

@@ -1,0 +1,118 @@
+﻿ 
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.SupplyOrders>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br/>
+<div class="searchform " align="right">
+    @using (Html.BeginForm("Index", "SupplyOrder", FormMethod.Get, new { @class = "form-inline" }))
+    { <text>Order Date :  </text>
+        <div class="form-group">
+           
+            @Html.Label("From", htmlAttributes: new {@class = "control-label col-md-4"})
+            <div class="col-md-8">
+                @Html.Editor("firstDate", "DateWithPicker")
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("To", htmlAttributes: new {@class = "control-label col-md-4"})
+            <div class="col-md-8">
+                @Html.Editor("lastDate", "DateWithPicker")
+            </div>
+        </div>
+        <br/>
+        @Html.Label("search", "Supplier Name ", new { @class = "control-label" })
+        @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control" })
+        <input type="submit" value="search" class="btn btn-default" />
+    }
+</div>
+<h2>Supply Order Index</h2>
+
+<p>
+    <a href="@Url.Action("Create", "SupplyOrder")" class="btn btn-primary ">
+        <i class="glyphicon glyphicon-plus" > Create </i>
+    </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+        
+            @Ajax.ActionLink("Supplier Name", "Index", "SupplyOrder", new { sort = ViewBag.SupplierNameSort, search = ViewBag.CurrentSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+   
+            @Ajax.ActionLink("Order Date", "Index", "SupplyOrder", new { sort = ViewBag.CDate, search = ViewBag.CurrentSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </th>*@
+        <th><a href="@Url.Action("DeletedOrderIndex", "SupplyOrder" )" class="btn btn-warning">
+    <i class="glyphicon glyphicon-remove"> Show Deleted Supply Orders</i>
+</a></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+        </td>*@
+        <td>
+            <a href="@Url.Action("Edit", "SupplyOrder", new {id = item.Id})" class="btn btn-default">
+                <i class="glyphicon glyphicon-edit" title="Edite Supplier Data"> </i>
+            </a>
+            <a href="@Url.Action("Details", "SupplyOrder", new {id = item.Id})" class="btn btn-info">
+                <i class="glyphicon glyphicon-info-sign" title="Show Supplier Data"> </i>
+            </a>
+            <a href="@Url.Action("Delete", "SupplyOrder", new {id = item.Id})" class="btn btn-danger">
+                <i class="glyphicon glyphicon-remove" title="Delete Supplier"></i>
+            </a>
+
+            <a href="@Url.Action("Index", "SupplyOrderDetails", new {id = item.Id})" class="btn btn-default ">
+                <i class="glyphicon glyphicon-plus" title="Show  Order Details"></i>
+            </a>   @*<a href="@Url.Action("Create", "SupplyOrderDetails", new {orderNo = item.Id})" class="btn btn-default ">
+                <i class="glyphicon glyphicon-plus" title="Create  Order Details"></i>
+            </a>*@
+
+            <a href="@Url.Action("Create", "SupplyOrderPayments", new {orderNo = item.Id, SupplierNo = item.SupplierId})" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus" title="Create  Order Payments"></i>
+            </a>
+          
+        </td>
+    </tr>
+}
+
+</table>
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))

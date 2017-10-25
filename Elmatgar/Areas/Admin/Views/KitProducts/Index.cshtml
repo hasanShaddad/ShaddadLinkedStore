@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Elmatgar.Core.Models.KitProducts>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<h3> <span class="label label-warning">Kit Products</span></h3>
+<br />
+<br />
+
+<p><a href="@Url.Action("Create", "KitProducts")" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Create New</a></p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActiveFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActiveFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+        </td>
+        <td>
+            <a href="@Url.Action("Details", "KitProducts",  new { id = item.Id })" class="btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></a>
+
+
+            <a href="@Url.Action("Edit", "KitProducts",  new { id = item.Id })" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+
+
+            <a href="@Url.Action("Delete", "KitProducts",  new { id = item.Id })" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+        </td>
+    </tr>
+}
+
+</table>

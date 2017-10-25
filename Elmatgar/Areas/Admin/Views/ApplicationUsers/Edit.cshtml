@@ -1,0 +1,229 @@
+﻿@model Elmatgar.Core.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ApplicationUser</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.FirstName)
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LasttName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.LasttName)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsCustomer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.DisplayFor(model => model.IsCustomer)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsUser, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.DisplayFor(model => model.IsUser)
+            
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.EmailConfirmed)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumberConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TwoFactorEnabled, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.DisplayFor(model => model.TwoFactorEnabled)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LockoutEndDateUtc, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LockoutEndDateUtc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LockoutEndDateUtc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LockoutEnabled, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @if (!Model.LockoutEnabled)
+                    {
+                        <p class="form-control-static">this user can not be locked</p>
+                    }
+                </div>
+            </div>
+        </div>
+ @if (Model.IsUser&&Model.Users.DepartmentId !=null)
+ {
+    <div class="form-group">
+        @Html.LabelFor(model => model.Users.DepartmentId , htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+           @ViewBag.Users_DepartmentId 
+        </div>
+    </div>
+
+ }
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.UserName)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+    @*lock out account*@
+        @if (Model.LockoutEnabled && (Model.LockoutEndDateUtc <= DateTime.Now || Model.LockoutEndDateUtc == null))
+        {
+            <div class="col-md-10">
+                <p class="form-control-static">unlocked</p>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                @using (Html.BeginForm("LockAccount", "ApplicationUsers", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                    @Html.HiddenFor(model => model.Id)
+
+                    <input type="submit" value="lock account" class="btn btn-danger"/>
+                }
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccessFailedCount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.AccessFailedCount)
+                </div>
+            </div>
+        }
+
+        @*UNlock account*@
+        @if (Model.LockoutEnabled && (Model.LockoutEndDateUtc > DateTime.Now))
+        {
+            <div class="col-md-10">
+                <p class="form-control-static">this account is lockedout untel @Html.DisplayFor(model => model.LockoutEndDateUtc) </p>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                @using (Html.BeginForm("UnLockAccount", "ApplicationUsers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                    @Html.HiddenFor(model => model.Id)
+                    <input type="submit" value="Unlock account" class="btn btn-Success" />
+                }
+            </div>
+        }@*roles*@
+       @using (Html.BeginForm())
+        {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        @Html.HiddenFor(model=>model.Id)
+<div class="form-group">
+    @Html.Label("Roles", new {@class = "control-label col-sm-2"})
+    <span class="col-sm-10">
+        @foreach (var item in Model.RolesList)
+        {
+            <input type="checkbox" name="roleSelectedOnView" value="@item.Value" checked="@item.Selected" class="checkbox-inline"/>
+            @Html.Label(item.Value, new {@class = "control-label"})<br/>
+        }
+    </span>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Save roles" class="btn btn-primary"/>
+    </div>
+</div>
+        }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

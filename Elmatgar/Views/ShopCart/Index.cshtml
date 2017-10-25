@@ -1,0 +1,90 @@
+﻿@model Elmatgar.ViewModels.Cart
+
+
+
+@section Scripts {
+<script>
+    window.onload = function() {
+
+        localStorage.setItem("CartLang", "en");
+    };</script>
+
+   
+ 
+
+    @*load the cart from localS*@
+    <script src="~/Scripts/LoadCart.js"></script>
+
+    <script>
+        //load the item arry from localStorage
+        function cartObject() {
+            var item = [];
+            for (var i = 0; i < window.localStorage.length; i++) {
+
+                var checkProdid = window.localStorage.key(i);
+                if (checkProdid.indexOf("details0122523430") > 0) {
+                    var prodid = checkProdid.replace("details0122523430", "");;
+
+                    var qtyt = localStorage.getItem(prodid);
+                    item.push({ "Id": i, "ProdId": prodid, "Qty": qtyt });
+
+
+                }
+            }
+
+            //give random id to each cart
+            var id = Math.floor((Math.random() * 100000000) + 40000);
+            var newCart = { "CartId": id, "CartItems": item };
+            return newCart;
+        };
+
+
+        $(function() {
+
+            $('#addtocart')
+                .click(function(e) {
+                    //turn item arry to json and send it to controller
+                    $.ajax({
+                        url: "@Url.Action("AddCart")",
+                        type: "POST",
+
+                        data: JSON.stringify(cartObject()),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data) {
+                            if ( data.success) {
+                                window.location.href ="@Url.Action("CartPromote", "ShopCart")";
+                            }  
+                        },
+                        error: function () {
+                            
+                        }
+                        ,
+                        complete: function () {
+                           window.location.href ="@Url.Action("CartPromote", "ShopCart")";
+                        }
+
+                    });
+
+
+                });
+        });
+    </script>
+
+}
+
+ 
+<input type="hidden" id="stock" value="@ViewBag.inventoryStock" />
+ 
+@using (Html.BeginForm())
+{
+
+
+    <div id="screen" class="screen"></div>
+
+    <input type="button" value="addtocart" id="addtocart" />
+
+}
+
+
+

@@ -1,0 +1,181 @@
+﻿ 
+
+@using PagedList.Mvc
+@model PagedList.IPagedList<Elmatgar.Core.Models.InventoryTrans>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<div class="searchform " align="right">
+    @using (Html.BeginForm("Index", "InventoryTrans", FormMethod.Get, new { @class = "form-inline" }))
+    { <text>Order Date :  </text>
+        <div class="form-group">
+
+            @Html.Label("From", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.Editor("firstDate", "DateWithPicker")
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("To", htmlAttributes: new {@class = "control-label col-md-4"})
+            <div class="col-md-8">
+                @Html.Editor("lastDate", "DateWithPicker")
+            </div>
+        </div> 
+            <br />
+            @Html.Label("search", "Supplier Name ", new { @class = "control-label" })
+            @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control" })
+            <br />
+            @Html.Label("ProductSearch", "Product Name ", new { @class = "control-label" })
+            @Html.TextBox("ProductSearch", ViewBag.CurrentProductSearch as string, new { @class = "form-control" })
+            <br />
+            @Html.Label("StoreSearch", "Store Name ", new { @class = "control-label" })
+            @Html.TextBox("StoreSearch", ViewBag.CurrentStoreSearch as string, new { @class = "form-control" })
+            <br />
+            <input type="submit" value="search" class="btn btn-default" />
+            }
+        </div>
+<h2>List of inventory Transaction  </h2>
+
+<p>
+    <br />
+    <br />
+    <br />
+    <a href="@Url.Action("Create", "InventoryTrans")" class="btn btn-primary ">
+        <i class="glyphicon glyphicon-plus"> Create </i>
+    </a>
+
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+       
+            @Ajax.ActionLink("Product Name", "Index", "InventoryTrans", new { sort = ViewBag.Productsort, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+           
+            @Ajax.ActionLink("Status", "Index", "InventoryTrans", new { sort = ViewBag.OStatussort, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+
+        @*<th>
+                @Html.DisplayNameFor(model => model.SupplyOrderDetails.CreatedBy)
+            </th>*@
+        <th>
+          
+            @Ajax.ActionLink("Supplier Name", "Index", "InventoryTrans", new { sort = ViewBag.SupplierNameSort, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+          
+            @Ajax.ActionLink("Store Name", "Index", "InventoryTrans", new { sort = ViewBag.Storesort, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+          
+            @Ajax.ActionLink("Date", "Index", "InventoryTrans", new { sort = ViewBag.CDate, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+            
+            @Ajax.ActionLink("Type", "Index", "InventoryTrans", new { sort = ViewBag.TransTypesort, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+           
+            @Ajax.ActionLink("Quantity", "Index", "InventoryTrans", new { sort = ViewBag.Quantitysort, search = ViewBag.CurrentSearch, ProductSearch = ViewBag.CurrentProductSearch, StoreSearch = ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        <th>
+          
+            @Ajax.ActionLink("Amount", "Index", "InventoryTrans", new { sort = ViewBag.Amountsort, search = ViewBag.CurrentSearch , ProductSearch = ViewBag.CurrentProductSearch, StoreSearch= ViewBag.CurrentStoreSearch },
+                new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "tableId", InsertionMode = InsertionMode.Replace })
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdatedBy)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDetails.OrderStatus)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.SupplyOrderDetails.CreatedBy)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Suppliers.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierStores.StoreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItTransDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItTransType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItTransAmt)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+                </td>*@
+            <td>
+                <a href="@Url.Action("Edit", "InventoryTrans", new {id = item.Id})" class="btn btn-default">
+                    <i class="glyphicon glyphicon-edit" title="Edite Supplier Data"> </i>
+                </a>
+                <a href="@Url.Action("Details", "InventoryTrans", new {id = item.Id})" class="btn btn-info">
+                    <i class="glyphicon glyphicon-info-sign" title="Show Supplier Data"> </i>
+                </a>
+
+                <a href="@Url.Action("Delete", "InventoryTrans", new {id = item.Id})" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-remove" title="Delite Supplier"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sort = ViewBag.CurrentSort, search = ViewBag.CurrentSearch }))

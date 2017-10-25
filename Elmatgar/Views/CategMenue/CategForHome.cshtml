@@ -1,0 +1,46 @@
+﻿
+@using Elmatgar.Core.Models
+@model IEnumerable<Elmatgar.Core.Models.Categories>
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                @if (item.Parent == null)
+                {
+                    if (item.Children.Count > 0)
+                    {
+                        <a href=@Url.Action("Index", "Home", new {categId = item.Id})>@Html.DisplayFor(modelitem => item.CategoryName) </a>
+                        <a><h4>description will gonna be here</h4></a>
+                    }
+                    else
+                    {
+                        <a href="product">@Html.DisplayFor(modelitem => item.CategoryName) </a>
+                        <a><h4>description will gonna be here</h4></a>
+                    }
+                }
+                else
+                {
+                    if (item.Children.Count > 0) //2
+                    {
+
+
+                        //if item.parent=item && cheldren==0
+                        <a href=@Url.Action("Index", "Home", new {categId = item.Id})>@Html.DisplayFor(modelitem => item.CategoryName) </a>
+
+
+                    }
+                    else
+                    {
+                        <a href="product">@Html.DisplayFor(modelitem => item.CategoryName)</a>
+
+                    }
+
+                }
+
+            </div>
+        }
+    </div>
+</div>

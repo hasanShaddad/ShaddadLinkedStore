@@ -1,0 +1,30 @@
+﻿<div ><!--ng-show="Cartvm.uiState.isCartAreaVisible"-->
+    <a href="#/main">Back to shopping</a>
+    <a href="#/CheckOut">CheckOut</a>
+    <div class="panel panel-success" ng-repeat="Item in Cartvm.cartItems">
+      
+        <div class="thumbnail">
+            <ul class="product-list small-block-grid-3">
+
+                <figure>
+                    <img src="{{Item.ImageUrl}}" height="100" width="100">
+                    <figcaption>
+                      
+                        <h3> Quntity : {{Item.StockQuntity}}</h3>
+
+                        <h3> Price : {{Item.UnitPrice *Item.Quntity }} $</h3>
+
+                        <div>
+                            <input type="number" min="1" max="{{Item.StockQuntity}}" ng-model="Item.Quntity" ng-change="Cartvm.ChangeQuantityClick()"/>
+                        </div>
+                        <div ng-show="Cartvm.uiState.IsUpdateQuantityVisable">
+                            <button ng-click="Cartvm.UpdateQuantityClick(Item)"> Save Updates </button>
+                        </div>
+                        <button ng-click="Cartvm.RemoveCartItemClick(Item.ItemId)">Remove from cart</button>
+                    </figcaption>
+                </figure>
+
+            </ul>
+        </div>
+    </div>
+</div>

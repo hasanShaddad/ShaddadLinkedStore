@@ -1,0 +1,130 @@
+﻿@model List<Elmatgar.Core.Models.Products >
+
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div>
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">Features Items</h2>
+                    @foreach (var item in Model.Take(9))
+                    {
+                        decimal? originalPrice = decimal.Parse(Html.DisplayFor(modelItem => item.ProductOriginalPrices.FirstOrDefault().OriginalPrice).ToString());
+
+
+                        var productPromotion = item.ProductPromotions.FirstOrDefault();
+
+                        var discountRule = item.DiscountRules.FirstOrDefault();
+
+                        //end of compute final price
+                        var productId = @Html.AttributeEncode(item.Id).ToString();
+                        decimal? finalprice = decimal.Parse(@FinalPriceHelper.FinalPriceVal(originalPrice, productPromotion, discountRule, item.Id).ToString());
+
+
+                        <h1><input type="hidden" value="@Html.AttributeEncode(item.Id)" id="@Html.AttributeEncode(item.Id)ProductId" name="SelectedLogin" /> </h1>
+                        <h1><input type="hidden" value="@Html.AttributeEncode(item.Name)" id="@Html.AttributeEncode(item.Id)ProductName" /></h1>
+                            <h1><input type="hidden" value="@Html.DisplayFor(modelItem => item.ProductOriginalPrices.FirstOrDefault().OriginalPrice)" id="@Html.AttributeEncode(item.Id)orPrice" /></h1>
+                                <h1><input type="hidden" value="@Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DrQty)" id="@Html.AttributeEncode(item.Id)drqty" /></h1>
+                                <input type="hidden" id="@Html.AttributeEncode(item.Id)finalprice" value="@FinalPriceHelper.DescountRolePrice(finalprice,discountRule).ToString()" />
+
+                                <input type="hidden" id="stock" value="@Html.DisplayFor(modelItem => item.InventoryTrans.FirstOrDefault().ItQty)" />
+                                
+
+
+
+
+
+                                <div class="col-lg-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="~/@Html.DisplayFor(modelItem => item.ProductImages.FirstOrDefault().ImageLink)/@Html.DisplayFor(modelItem => item.ProductImages.FirstOrDefault().ImageName)" id="@Html.DisplayFor(modelItem => item.Id)imgUrl" class="img-responsive zoom-img" />
+                                                <!--FinalPriceHelper to add final price after original price
+                                                FinalPriceHelper is in appCode folder so it is work on the run time onle 
+                                                    so we have an error for each use -->
+
+                                                @FinalPriceHelper.FinalPrice(originalPrice, productPromotion, discountRule)
+
+
+                                                <p>@Html.DisplayFor(modelItem => item.Name, new { @class = "control-label" })</p>
+                                                @if (!string.IsNullOrEmpty(@Html.DisplayFor(modelItem => item.InventoryTrans.FirstOrDefault().ItQty).ToString()))
+                                                {
+
+                                                    <input type="submit" value="addt to cart" id="addtocart" onclick="addMe(@productId);" class="btn btn-default add-to-cart" />
+
+                                                }
+                                                else
+                                                {<span style="color:red"> Not available </span>}
+
+                                            </div>
+                                            <div class="product-overlay">
+                                                <div class="overlay-content">
+                                                    
+                                                   <!--FinalPriceHelper to add final price after original price
+                                                FinalPriceHelper is in appCode folder so it is work on the run time onle 
+                                                    so we have an error for each use --> 
+
+                                                    @FinalPriceHelper.FinalPrice(originalPrice, productPromotion, discountRule)
+
+
+
+                                                    @{
+                                                        var firstOrDefault = item.DiscountRules.FirstOrDefault();
+                                                    }
+                                                    @if (firstOrDefault != null && (firstOrDefault.EndDate >= DateTime.Now))
+                                                    {
+                                                        <p>by @Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DrQty) peaces with @Html.DisplayFor(modelItem => item.DiscountRules.FirstOrDefault().DiscountPercentage)% descount</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p>@Html.DisplayFor(modelItem => item.Name, new { @class = "control-label" })</p>
+                                                    }
+                                                    @if (!string.IsNullOrEmpty(@Html.DisplayFor(modelItem => item.InventoryTrans.FirstOrDefault().ItQty).ToString()))
+                                                    {
+
+                                                        <input type="submit" value="addt to cart" id="addtocart" onclick="addMe(@productId);" class="btn btn-default add-to-cart" />
+
+                                                    }
+                                                    else
+                                                    {<span style="color:red"> we are sorry product is Not available</span>}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="choose">
+                                            <ul class="nav nav-pills nav-justified">
+                                                
+                                                <li>@Html.ActionLink("more details", "ProductsDetails", new { id = item.Id })</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                                        }
+                    <br />
+                </div>
+               
+            </div><!--/recommended_items-->
+
+        </div>
+    </div>
+
+</section>
+
+
+<link href="@Url.Content("~/Content/rating.css")" rel="stylesheet" />
+
+
+
+<!--Cart script-->
+ 
+
+
+
+ 
+
+
+

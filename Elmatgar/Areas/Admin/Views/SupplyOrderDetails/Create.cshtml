@@ -1,0 +1,121 @@
+﻿@model Elmatgar.Core.Models.SupplyOrderDetails
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@*@using (Html.BeginForm("Create", "SupplyOrderDetails", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.Label("PNsearch", "product name ", new { @class = "control-label" })
+    @Html.TextBox("PNsearch", ViewBag.PurchasePNCurrentSearch as string, new { @class = "form-control" })
+    @Html.Label("SNsearchlabel", "Supplier name", new { @class = "control-label" })
+    @Html.TextBox("SNsearch", ViewBag.PurchaseSNCurrentSearch as string, new { @class = "form-control" })
+    <br/>
+    <input type="submit" value="search" class="btn btn-default" />
+}*@
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <br /> <br /> <br />
+        <h4> Create Supply Order Details</h4>
+      
+
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <div class="form-group">
+            @Html.LabelFor(model => model.SupplyOrderId, "Supply Order Name", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownList("SupplyOrderId", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.SupplyOrderId, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductId, "Product Name", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownList("ProductId", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ProductId, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Quantity, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.CreationDate, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.CreationDate, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.LastUpdateDate, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.LastUpdateDate, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.CreatedBy, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.CreatedBy, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.LastUpdatedBy, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.LastUpdatedBy, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-actions no-color">
+            <a href="@Url.Action("Index", "SupplyOrderDetails", new { id=@ViewBag.OrderId })" class="btn btn-primary">
+                <div class="glyphicon glyphicon-arrow-left"> </div> Back to List
+            </a>
+            <input type="submit" value="Create" class="btn btn-success"/>
+        </div>
+
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#SNsearch").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url:"@Url.Action("SupNameComplete")",
+                    type: "POST",
+                    dataType: "json",
+                    data: { Prefix: request.term },
+                    success: function(data) {
+                        response($.map(data, function(item) {
+                            return { label: item.SSupplierName, value: item.SSupplierName };
+                        }))
+                    }
+                })
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+</script>  
+}

@@ -1,0 +1,79 @@
+﻿@model Elmatgar.Core.Models.SupplyOrderPayments
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SupplyOrderPayments</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.SupplyOrders.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplyOrders.CreatedBy)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.Suppliers.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suppliers.SupplierName)
+        </dd>
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.Paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paid)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.LastUpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdateDate)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt class="label label-success">
+            @Html.DisplayNameFor(model => model.LastUpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <a href="@Url.Action("Index", "SupplyOrderPayments")" class="btn btn-primary">
+        <i class="glyphicon glyphicon-arrow-left">  </i> Back to List
+    </a>
+    <a href="@Url.Action("Edit", "SupplyOrderPayments", new {id = Model.Id})" class="btn btn-default">
+        <i class="glyphicon glyphicon-edit">  Edite  </i>
+    </a>
+</p>
